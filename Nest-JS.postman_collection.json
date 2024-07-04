@@ -1,0 +1,3207 @@
+{
+	"info": {
+		"_postman_id": "e35db456-0722-405e-8b15-cdc16ca1e38f",
+		"name": "Nest-JS",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24968800",
+		"_collection_link": "https://amwhiz-developer-team.postman.co/workspace/Hermetic-hubspot-integration~d54db4be-afe5-4923-af7e-713027836791/collection/24968800-e35db456-0722-405e-8b15-cdc16ca1e38f?action=share&source=collection_link&creator=24968800"
+	},
+	"item": [
+		{
+			"name": "Register-Signin-W-Google",
+			"item": [
+				{
+					"name": "Register user",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Authorization}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"localId\": \"4ZiP07oGzPeQm2FfqZ6vvBikzoQ2\",\r\n    \"email\": \"gayathrivs1991@gmail.com\",\r\n    \"displayName\": \"Gayathri Varatharajan\",\r\n    \"photoUrl\": \"https://lh3.googleusercontent.com/a/ACg8ocJ9yBs_jPLysBLPeWFxyZDAy4kwKCTyovreZoK7SyHH=s96-c\",\r\n    \"emailVerified\": true,\r\n    \"providerUserInfo\": [\r\n        {\r\n            \"providerId\": \"google.com\",\r\n            \"displayName\": \"Gayathri Varatharajan\",\r\n            \"photoUrl\": \"https://lh3.googleusercontent.com/a/ACg8ocJ9yBs_jPLysBLPeWFxyZDAy4kwKCTyovreZoK7SyHH=s96-c\",\r\n            \"federatedId\": \"4ZiP07oGzPeQm2FfqZ6vvBikzoQ2\",\r\n            \"email\": \"gayathrivs1991@gmail.com\",\r\n            \"rawId\": \"4ZiP07oGzPeQm2FfqZ6vvBikzoQ2\"\r\n        }\r\n    ],\r\n    \"validSince\": \"Thu, 29 Feb 2024 05:43:35 GMT\",\r\n    \"lastLoginAt\": \"Thu, 04 Jul 2024 07:03:56 GMT\",\r\n    \"createdAt\": \"Thu, 29 Feb 2024 05:43:35 GMT\",\r\n    \"lastRefreshAt\": \"Thu, 04 Jul 2024 07:03:56 GMT\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}register_user",
+							"host": [
+								"{{baseURL}}register_user"
+							]
+						},
+						"description": "The `POST /register_user` endpoint is used to register a new user. The request should include the necessary user details such as localId, email, displayName, photoUrl, emailVerified, providerUserInfo, validSince, lastLoginAt, createdAt, and lastRefreshAt.\n\n### Request Body\n\n- `localId` (string): The local ID of the user.\n    \n- `email` (string): The email address of the user.\n    \n- `displayName` (string): The display name of the user.\n    \n- `photoUrl` (string): The URL of the user's profile photo.\n    \n- `emailVerified` (boolean): Indicates if the user's email is verified.\n    \n- `providerUserInfo` (array): An array of provider user information.\n    - `providerId` (string): The ID of the provider.\n        \n    - `displayName` (string): The display name associated with the provider.\n        \n    - `photoUrl` (string): The URL of the provider's profile photo.\n        \n    - `federatedId` (string): The federated ID associated with the provider.\n        \n    - `email` (string): The email address associated with the provider.\n        \n    - `rawId` (string): The raw ID associated with the provider.\n        \n- `validSince` (string): The timestamp indicating when the user became valid.\n    \n- `lastLoginAt` (string): The timestamp of the user's last login.\n    \n- `createdAt` (string): The timestamp indicating when the user was created.\n    \n- `lastRefreshAt` (string): The timestamp of the user's last refresh.\n    \n\n### Response\n\nThe response will be a JSON object with the following properties:\n\n- `message` (string): A message related to the registration process.\n    \n- `is_onboarding_needed` (boolean): Indicates if onboarding is needed for the user.\n    \n- `token` (string): The token associated with the registered user.\n    \n\n### Example\n\n``` json\n{\n  \"message\": \"\",\n  \"is_onboarding_needed\": true,\n  \"token\": \"\"\n}\n\n ```"
+					},
+					"response": [
+						{
+							"name": "success response",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"localId\":\"1234\",\r\n    \"email\":\"arulkumar@amwhiz.com\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/register_user",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"register_user"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "277"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"115-NggGo6ozN2nJgVeoQpgpHBJ3HtE\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 17 Jun 2024 13:15:10 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"User handled successfully\",\n    \"is_onboarding_needed\": false,\n    \"token\": \"amwiz@eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsb2NhbElkIjoiMTIzNCIsImVtYWlsIjoiYXJ1bGt1bWFyQGFtd2hpei5jb20iLCJpYXQiOjE3MTg2MzAxMTAsImV4cCI6MTcxOTIzNDkxMH0.ivlETsqQ8EpSz4YoOYOvdSCLLUtPwPg1Os7IF8zJu6c\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Dashboard",
+			"item": [
+				{
+					"name": "get dashboard data",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/app/dashboard-data?userId=p80cDSbOlsfPWpjY3nwIZAQE1Fu2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"app",
+								"dashboard-data"
+							],
+							"query": [
+								{
+									"key": "userId",
+									"value": "p80cDSbOlsfPWpjY3nwIZAQE1Fu2"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "success response",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/app/dashboard-data?userId=p80cDSbOlsfPWpjY3nwIZAQE1Fu2",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"app",
+										"dashboard-data"
+									],
+									"query": [
+										{
+											"key": "userId",
+											"value": "p80cDSbOlsfPWpjY3nwIZAQE1Fu2"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "469"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1d5-HfTIE+moR21TwHxqx/4t7wqlRzE\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 18 Jun 2024 08:46:42 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"booked_appointments\": [\n            {\n                \"meeting_date\": \"March    \",\n                \"meeting_count\": \"16\"\n            },\n            {\n                \"meeting_date\": \"April    \",\n                \"meeting_count\": \"3\"\n            }\n        ],\n        \"speed_to_lead\": [\n            {\n                \"average_ai_reply_time\": 12.245706164261751\n            }\n        ],\n        \"total_human_spend_amount\": [\n            {\n                \"total_multiplication\": \"325\",\n                \"month\": \"March    \"\n            },\n            {\n                \"total_multiplication\": \"25\",\n                \"month\": \"April    \"\n            }\n        ],\n        \"message_sent\": [\n            {\n                \"meeting_month\": \"March    \",\n                \"total_count\": \"104\"\n            },\n            {\n                \"meeting_month\": \"April    \",\n                \"total_count\": \"9\"\n            }\n        ],\n        \"total_mia_spend_amount\": []\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "leads",
+			"item": [
+				{
+					"name": "lead data",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer amwiz@eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsb2NhbElkIjoiSzhLZUdEdU90V01WMERNNUJld2JCMlFtV2NMMiIsImVtYWlsIjoiYXJ1bGt1bWFyQGFtd2hpei5jb20iLCJkaXNwbGF5TmFtZSI6IkFydWxrdW1hciBUaGl5YWdhcmFqYW4iLCJwaG90b1VybCI6Imh0dHBzOi8vbGgzLmdvb2dsZXVzZXJjb250ZW50LmNvbS9hL0FDZzhvY0t3eU1uZjUySzJsWWlmM3JCVkNhM0kzdzVleXFMRU1MbEQ3LS1WUmtXRT1zOTYtYyIsImVtYWlsVmVyaWZpZWQiOnRydWUsInByb3ZpZGVyVXNlckluZm8iOlt7InByb3ZpZGVySWQiOiJnb29nbGUuY29tIiwiZGlzcGxheU5hbWUiOiJBcnVsa3VtYXIgVGhpeWFnYXJhamFuIiwicGhvdG9VcmwiOiJodHRwczovL2xoMy5nb29nbGV1c2VyY29udGVudC5jb20vYS9BQ2c4b2NLd3lNbmY1MksybFlpZjNyQlZDYTNJM3c1ZXlxTEVNTGxENy0tVlJrV0U9czk2LWMiLCJmZWRlcmF0ZWRJZCI6Iks4S2VHRHVPdFdNVjBETTVCZXdiQjJRbVdjTDIiLCJlbWFpbCI6ImFydWxrdW1hckBhbXdoaXouY29tIiwicmF3SWQiOiJLOEtlR0R1T3RXTVYwRE01QmV3YkIyUW1XY0wyIn1dLCJ2YWxpZFNpbmNlIjoiV2VkLCAxNCBGZWIgMjAyNCAxMjo0Njo1NCBHTVQiLCJsYXN0TG9naW5BdCI6IldlZCwgMTkgSnVuIDIwMjQgMDk6NDc6NDIgR01UIiwiY3JlYXRlZEF0IjoiV2VkLCAxNCBGZWIgMjAyNCAxMjo0Njo1NCBHTVQiLCJsYXN0UmVmcmVzaEF0IjoiV2VkLCAxOSBKdW4gMjAyNCAwOTo0Nzo0MiBHTVQiLCJpYXQiOjE3MTg3OTA0NjksImV4cCI6MTcxOTM5NTI2OX0.rg9XCjV4hbpw43q2sgZD8Pzp4GTQ3ZotKdR047TFaF8",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/user/leads?userId=K8KeGDuOtWMV0DM5BewbB2QmWcL2&",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"leads"
+							],
+							"query": [
+								{
+									"key": "userId",
+									"value": "K8KeGDuOtWMV0DM5BewbB2QmWcL2"
+								},
+								{
+									"key": "",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "success response",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/user/leads?userId=K8KeGDuOtWMV0DM5BewbB2QmWcL2&",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"user",
+										"leads"
+									],
+									"query": [
+										{
+											"key": "userId",
+											"value": "K8KeGDuOtWMV0DM5BewbB2QmWcL2"
+										},
+										{
+											"key": "",
+											"value": null
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "11880"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2e68-YXaXrtfucpObRCt55XYJlyC7JG0\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 18 Jun 2024 13:49:45 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"$metadata\": {\n            \"httpStatusCode\": 200,\n            \"requestId\": \"HBS4ATCIA2KQNI1DQVLNRVN6GBVV4KQNSO5AEMVJF66Q9ASUAAJG\",\n            \"attempts\": 1,\n            \"totalRetryDelay\": 0\n        },\n        \"Count\": 9,\n        \"Items\": [\n            {\n                \"event_sk\": \"EVENT#05012886-ca4c-49ca-b43c-9ab2a1e6b4a3\",\n                \"user_role\": \"owner\",\n                \"email\": \"anjala@gmail.com\",\n                \"notification_type\": \"form-submission\",\n                \"owner_id\": \"682232841\",\n                \"event_type\": \"one-on-one\",\n                \"meeting_start_time\": \"2024-06-06T10:45:00Z\",\n                \"modified\": \"2024-06-06T05:05:06.486Z\",\n                \"meeting_end_time\": \"2024-06-06T11:15:00Z\",\n                \"engagement_source\": \"MEETINGS\",\n                \"meeting_title\": \"test\",\n                \"firstname\": \"anjala\",\n                \"event_title\": \"test\",\n                \"event_form_info\": [\n                    {\n                        \"provider\": \"hubspot\",\n                        \"forms\": [\n                            {\n                                \"name\": \"blog Comment Form 162754088311 (English - United States)\",\n                                \"id\": \"d2ee1496-5170-47df-9394-5b46094d6a5f\"\n                            }\n                        ]\n                    }\n                ],\n                \"meeting_id\": \"53974558988\",\n                \"deliveredAt\": \"2024-06-06T05:05:06.481Z\",\n                \"event_name\": \"abcd\",\n                \"object_source\": \"hubspot\",\n                \"form_name\": \"Meetings Link: arulkumar/testing\",\n                \"user-id\": \"LEAD#anjala@gmail.com\",\n                \"hubId\": 44888444,\n                \"source\": \"hubspot-scheduling\",\n                \"entity\": \"lead-table-dev\",\n                \"first_conversion_event_name\": \"Meetings Link: arulkumar/testing\",\n                \"created\": \"2024-06-06T05:05:06.486Z\",\n                \"hermetic_user_id\": \"K8KeGDuOtWMV0DM5BewbB2QmWcL2\",\n                \"lastname\": \"anjala\",\n                \"meeting_source\": \"MEETINGS_PUBLIC\",\n                \"hermetic_owner_id\": \"K8KeGDuOtWMV0DM5BewbB2QmWcL2\",\n                \"fullname\": \"anjalaanjala\",\n                \"event_sales_reps\": [\n                    {\n                        \"hermetic_id\": \"K8KeGDuOtWMV0DM5BewbB2QmWcL2\",\n                        \"name\": \"Arulkumar Thiyagarajan\",\n                        \"email\": \"arulkumar@amwhiz.com\"\n                    }\n                ],\n                \"engagements_last_meeting_booked\": \"2024-06-06T10:45:00Z\"\n            },\n            {\n                \"event_sk\": \"EVENT#05012886-ca4c-49ca-b43c-9ab2a1e6b4a3\",\n                \"user_role\": \"owner\",\n                \"email\": \"peterrr@gmail.com\",\n                \"notification_type\": \"form-submission\",\n                \"owner_id\": \"682232841\",\n                \"event_type\": \"one-on-one\",\n                \"meeting_start_time\": \"2024-06-07T10:00:00Z\",\n                \"modified\": \"2024-06-06T06:25:11.833Z\",\n                \"meeting_end_time\": \"2024-06-07T10:30:00Z\",\n                \"engagement_source\": \"MEETINGS\",\n                \"meeting_title\": \"test\",\n                \"firstname\": \"rayapuram\",\n                \"event_title\": \"test\",\n                \"event_form_info\": [\n                    {\n                        \"provider\": \"hubspot\",\n                        \"forms\": [\n                            {\n                                \"name\": \"blog Comment Form 162754088311 (English - United States)\",\n                                \"id\": \"d2ee1496-5170-47df-9394-5b46094d6a5f\"\n                            }\n                        ]\n                    }\n                ],\n                \"phone\": \"54654647884\",\n                \"meeting_id\": \"53981247085\",\n                \"deliveredAt\": \"2024-06-06T06:25:11.832Z\",\n                \"event_name\": \"abcd\",\n                \"object_source\": \"hubspot\",\n                \"form_name\": \"Meetings Link: arulkumar/testing\",\n                \"user-id\": \"LEAD#peterrr@gmail.com\",\n                \"hubId\": 44888444,\n                \"source\": \"hubspot-scheduling\",\n                \"entity\": \"lead-table-dev\",\n                \"first_conversion_event_name\": \"Meetings Link: arulkumar/testing\",\n                \"created\": \"2024-06-06T06:25:11.833Z\",\n                \"hermetic_user_id\": \"K8KeGDuOtWMV0DM5BewbB2QmWcL2\",\n                \"lastname\": \"peter\",\n                \"meeting_source\": \"MEETINGS_PUBLIC\",\n                \"hermetic_owner_id\": \"K8KeGDuOtWMV0DM5BewbB2QmWcL2\",\n                \"meeting_body\": \"<br><br>Phone number: 54654647884\",\n                \"fullname\": \"rayapurampeter\",\n                \"event_sales_reps\": [\n                    {\n                        \"hermetic_id\": \"K8KeGDuOtWMV0DM5BewbB2QmWcL2\",\n                        \"name\": \"Arulkumar Thiyagarajan\",\n                        \"email\": \"arulkumar@amwhiz.com\"\n                    }\n                ],\n                \"engagements_last_meeting_booked\": \"2024-06-07T10:00:00Z\"\n            },\n            {\n                \"object_source\": \"MEETINGS\",\n                \"form_name\": \"Meetings Link: arulkumar/testing\",\n                \"user-id\": \"LEAD#manmadhan@gmail.com\",\n                \"hubId\": 44888444,\n                \"source\": \"hubspot\",\n                \"entity\": \"lead-table-dev\",\n                \"user_role\": \"owner\",\n                \"email\": \"manmadhan@gmail.com\",\n                \"notification_type\": \"form-submission\",\n                \"created\": \"2024-06-06T05:16:54.577Z\",\n                \"hermetic_user_id\": \"K8KeGDuOtWMV0DM5BewbB2QmWcL2\",\n                \"lastname\": \"anbu\",\n                \"modified\": \"2024-06-06T05:16:54.577Z\",\n                \"hermetic_owner_id\": \"K8KeGDuOtWMV0DM5BewbB2QmWcL2\",\n                \"firstname\": \"manmadhan\",\n                \"object_id\": \"27686493042\",\n                \"event_form_info\": [\n                    {\n                        \"form_id\": null,\n                        \"form_name\": null,\n                        \"provider\": null\n                    }\n                ],\n                \"phone\": \"9876543210\",\n                \"fullname\": \"manmadhananbu\",\n                \"event_sales_reps\": [],\n                \"deliveredAt\": \"2024-06-06T05:16:54.576Z\"\n            },\n            {\n                \"activity\": [],\n                \"event_sk\": \"EVENT#98c2b5b9-5138-4cd3-8655-02d51ed891f7\",\n                \"created_by\": \"2808b6b8-0a8b-44d5-b6f6-7641302ef38e\",\n                \"event_start_date\": null,\n                \"email\": \"bence.babics.ai@gmail.com\",\n                \"client_timezone\": \"America/New_York\",\n                \"event_type_url\": null,\n                \"event_type\": \"one-on-one\",\n                \"event_status\": \"waiting for reschedule\",\n                \"event_scheduled\": false,\n                \"first_touch\": 1717666662,\n                \"lead_status\": \"waiting for reschedule\",\n                \"phone\": \"+17864002252\",\n                \"created_at\": 1717666660,\n                \"lead_name\": \"Bence \",\n                \"conversation\": [\n                    {\n                        \"asof\": \"2024-06-06T09:37:47.044780+00:00\",\n                        \"message\": \"Hey there... this is Mia. Is this Bence?\",\n                        \"message_type\": \"ai\"\n                    },\n                    {\n                        \"asof\": \"2024-06-06T09:39:12.650777+00:00\",\n                        \"message\": \"You requested that we contact you through our website, so I just wanted to touch base and see what day & time work well for a quick call - Mia✨\",\n                        \"message_type\": \"ai\"\n                    },\n                    {\n                        \"asof\": \"2024-06-06 21:03:21\",\n                        \"message\": \"Hi Bence, just a friendly nudge. We're eager to explore how we can support your goals. Could you share when you're available for a chat? - Mia✨\",\n                        \"message_type\": \"mia\"\n                    },\n                    {\n                        \"asof\": \"2024-06-07 13:17:59\",\n                        \"message\": \"Hey Bence, I noticed we missed each other earlier. Let's find a new time that suits you better. What day works best for you next week? Looking forward to our conversation! - Mia✨\",\n                        \"message_type\": \"mia\"\n                    },\n                    {\n                        \"asof\": \"2024-06-07 13:30:14\",\n                        \"message\": \"Hey Bence, hope you're doing well! Just wanted to check in again. We're all set and excited to discuss possibilities that await. Can we lock in a time for a call this week? - Mia✨\",\n                        \"message_type\": \"mia\"\n                    }\n                ],\n                \"additional_invitee_emails\": [],\n                \"user-id\": \"K8KeGDuOtWMV0DM5BewbB2QmWcL2\",\n                \"source\": \"hubspot\",\n                \"twilio_number\": \"+12135169625\",\n                \"last_ai_message_timestamp\": \"2024-06-06T09:37:40.770593\",\n                \"hermetic_user_id\": \"K8KeGDuOtWMV0DM5BewbB2QmWcL2\",\n                \"asof\": \"2024-06-06T09:37:42.112553+00:00\",\n                \"hermetic_owner_id\": \"K8KeGDuOtWMV0DM5BewbB2QmWcL2\",\n                \"is_ai_enabled\": false,\n                \"last_human_message_timestamp\": null,\n                \"event_id\": null\n            },\n            {\n                \"event_sk\": \"EVENT#4cd30a36-75a6-495c-b76e-6f07e5dff6d7\",\n                \"user_role\": \"owner\",\n                \"email\": \"arulkumar@amwhiz.com\",\n                \"notification_type\": \"form-submission\",\n                \"event_type\": \"one-on-one\",\n                \"_md\": \"2024-06-03T15:10:53.022Z\",\n                \"firstname\": \"Bence\",\n                \"event_title\": \"bbence14\",\n                \"event_form_info\": [\n                    {\n                        \"form_id\": \"d90357a5-aa93-4657-8986-cee26a122462\",\n                        \"form_name\": \"Demo form\",\n                        \"provider\": \"hubspot\"\n                    }\n                ],\n                \"phone\": \"+14157989925\",\n                \"deliveredAt\": \"2024-06-03T15:10:53.020Z\",\n                \"event_name\": \"Bence 1-1\",\n                \"object_source\": \"FORM\",\n                \"form_name\": \"Demo form\",\n                \"user-id\": \"LEAD#arulkumar@amwhiz.com\",\n                \"hubId\": 44959604,\n                \"source\": \"hubspot\",\n                \"_et\": \"lead-table\",\n                \"_ct\": \"2024-06-03T15:10:53.022Z\",\n                \"hermetic_user_id\": \"K8KeGDuOtWMV0DM5BewbB2QmWcL2\",\n                \"lastname\": \"Babics\",\n                \"hermetic_owner_id\": \"K8KeGDuOtWMV0DM5BewbB2QmWcL2\",\n                \"is_ai_enabled\": false,\n                \"object_id\": \"26781193321\",\n                \"fullname\": \"BenceBabics\",\n                \"event_sales_reps\": [\n                    {\n                        \"calendarsList\": [\n                            {\n                                \"calendar_id\": \"cal_ZjjQb85ZhAH0AHLa_Y6P2bU5GPrqKD8fGPNbrlw\",\n                                \"calendar_name\": \"arulkumar@amwhiz.com\",\n                                \"provider_name\": \"google\"\n                            }\n                        ],\n                        \"hermetic_id\": \"K8KeGDuOtWMV0DM5BewbB2QmWcL2\",\n                        \"name\": \"Bence Babics\",\n                        \"email\": \"arulkumar@amwhiz.com\"\n                    }\n                ]\n            },\n            {\n                \"event_sk\": \"EVENT#05012886-ca4c-49ca-b43c-9ab2a1e6b4a3\",\n                \"user_role\": \"owner\",\n                \"email\": \"pbabu@gmail.com\",\n                \"notification_type\": \"form-submission\",\n                \"owner_id\": \"682232841\",\n                \"event_type\": \"one-on-one\",\n                \"meeting_start_time\": \"2024-06-07T05:45:00Z\",\n                \"modified\": \"2024-06-06T08:47:47.472Z\",\n                \"meeting_end_time\": \"2024-06-07T06:15:00Z\",\n                \"engagement_source\": \"MEETINGS\",\n                \"meeting_title\": \"test\",\n                \"event_title\": \"test\",\n                \"firstname\": \"P\",\n                \"event_form_info\": [\n                    {\n                        \"provider\": \"hubspot\",\n                        \"forms\": [\n                            {\n                                \"name\": \"blog Comment Form 162754088311 (English - United States)\",\n                                \"id\": \"d2ee1496-5170-47df-9394-5b46094d6a5f\"\n                            }\n                        ]\n                    }\n                ],\n                \"phone\": \"5489444894\",\n                \"meeting_id\": \"53987643780\",\n                \"deliveredAt\": \"2024-06-06T08:47:47.471Z\",\n                \"event_name\": \"abcd\",\n                \"object_source\": \"hubspot\",\n                \"form_name\": \"Meetings Link: arulkumar/testing\",\n                \"user-id\": \"LEAD#pbabu@gmail.com\",\n                \"source\": \"hubspot-scheduling\",\n                \"hubId\": 44888444,\n                \"first_conversion_event_name\": \"Meetings Link: arulkumar/testing\",\n                \"entity\": \"lead-table-dev\",\n                \"created\": \"2024-06-06T08:47:47.472Z\",\n                \"hermetic_user_id\": \"K8KeGDuOtWMV0DM5BewbB2QmWcL2\",\n                \"lastname\": \"Babu\",\n                \"meeting_source\": \"MEETINGS_PUBLIC\",\n                \"hermetic_owner_id\": \"K8KeGDuOtWMV0DM5BewbB2QmWcL2\",\n                \"meeting_body\": \"<br><br>Phone number: 5489444894\",\n                \"fullname\": \"PBabu\",\n                \"event_sales_reps\": [\n                    {\n                        \"hermetic_id\": \"K8KeGDuOtWMV0DM5BewbB2QmWcL2\",\n                        \"name\": \"Arulkumar Thiyagarajan\",\n                        \"email\": \"arulkumar@amwhiz.com\"\n                    }\n                ],\n                \"engagements_last_meeting_booked\": \"2024-06-07T05:45:00Z\"\n            },\n            {\n                \"event_sk\": \"EVENT#05012886-ca4c-49ca-b43c-9ab2a1e6b4a3\",\n                \"user_role\": \"owner\",\n                \"email\": \"nagamma@gmail.com\",\n                \"notification_type\": \"form-submission\",\n                \"owner_id\": \"682232841\",\n                \"event_type\": \"one-on-one\",\n                \"meeting_start_time\": \"2024-06-06T10:00:00Z\",\n                \"modified\": \"2024-06-05T14:22:33.111Z\",\n                \"meeting_end_time\": \"2024-06-06T10:30:00Z\",\n                \"engagement_source\": \"MEETINGS\",\n                \"meeting_title\": \"test\",\n                \"firstname\": \"ngamma\",\n                \"event_title\": \"test\",\n                \"event_form_info\": [\n                    {\n                        \"provider\": \"hubspot\",\n                        \"forms\": [\n                            {\n                                \"name\": \"blog Comment Form 162754088311 (English - United States)\",\n                                \"id\": \"d2ee1496-5170-47df-9394-5b46094d6a5f\"\n                            }\n                        ]\n                    }\n                ],\n                \"meeting_id\": \"53934175749\",\n                \"deliveredAt\": \"2024-06-05T14:22:33.110Z\",\n                \"event_name\": \"abcd\",\n                \"object_source\": \"hubspot\",\n                \"form_name\": \"Meetings Link: arulkumar/testing\",\n                \"user-id\": \"LEAD#nagamma@gmail.com\",\n                \"hubId\": 44888444,\n                \"source\": \"hubspot-scheduling\",\n                \"entity\": \"lead-table-dev\",\n                \"first_conversion_event_name\": \"Meetings Link: arulkumar/testing\",\n                \"created\": \"2024-06-05T14:22:33.111Z\",\n                \"hermetic_user_id\": \"K8KeGDuOtWMV0DM5BewbB2QmWcL2\",\n                \"lastname\": \"thangadurai\",\n                \"meeting_source\": \"MEETINGS_PUBLIC\",\n                \"hermetic_owner_id\": \"K8KeGDuOtWMV0DM5BewbB2QmWcL2\",\n                \"fullname\": \"ngammathangadurai\",\n                \"event_sales_reps\": [\n                    {\n                        \"hermetic_id\": \"K8KeGDuOtWMV0DM5BewbB2QmWcL2\",\n                        \"name\": \"Arulkumar Thiyagarajan\",\n                        \"email\": \"arulkumar@amwhiz.com\"\n                    }\n                ],\n                \"engagements_last_meeting_booked\": \"2024-06-06T10:00:00Z\"\n            },\n            {\n                \"event_sk\": \"EVENT#05012886-ca4c-49ca-b43c-9ab2a1e6b4a3\",\n                \"user_role\": \"owner\",\n                \"email\": \"riksha@gmail.com\",\n                \"notification_type\": \"form-submission\",\n                \"owner_id\": \"682232841\",\n                \"event_type\": \"one-on-one\",\n                \"meeting_start_time\": \"2024-06-07T08:00:00Z\",\n                \"modified\": \"2024-06-06T10:39:35.611Z\",\n                \"meeting_end_time\": \"2024-06-07T08:30:00Z\",\n                \"engagement_source\": \"MEETINGS\",\n                \"meeting_title\": \"test\",\n                \"event_title\": \"test\",\n                \"firstname\": \"riksha\",\n                \"event_form_info\": [\n                    {\n                        \"provider\": \"hubspot\",\n                        \"forms\": [\n                            {\n                                \"name\": \"blog Comment Form 162754088311 (English - United States)\",\n                                \"id\": \"d2ee1496-5170-47df-9394-5b46094d6a5f\"\n                            }\n                        ]\n                    }\n                ],\n                \"phone\": \"498765457\",\n                \"meeting_id\": \"53990109225\",\n                \"deliveredAt\": \"2024-06-06T10:39:35.610Z\",\n                \"event_name\": \"abcd\",\n                \"object_source\": \"hubspot\",\n                \"form_name\": \"Meetings Link: arulkumar/testing\",\n                \"user-id\": \"LEAD#riksha@gmail.com\",\n                \"source\": \"hubspot-scheduling\",\n                \"hubId\": 44888444,\n                \"first_conversion_event_name\": \"Meetings Link: arulkumar/testing\",\n                \"entity\": \"lead-table-dev\",\n                \"created\": \"2024-06-06T10:39:35.611Z\",\n                \"hermetic_user_id\": \"K8KeGDuOtWMV0DM5BewbB2QmWcL2\",\n                \"lastname\": \"mama\",\n                \"meeting_source\": \"MEETINGS_PUBLIC\",\n                \"hermetic_owner_id\": \"K8KeGDuOtWMV0DM5BewbB2QmWcL2\",\n                \"meeting_body\": \"<br><br>Phone number: 498765457\",\n                \"fullname\": \"rikshamama\",\n                \"event_sales_reps\": [\n                    {\n                        \"hermetic_id\": \"K8KeGDuOtWMV0DM5BewbB2QmWcL2\",\n                        \"name\": \"Arulkumar Thiyagarajan\",\n                        \"email\": \"arulkumar@amwhiz.com\"\n                    }\n                ],\n                \"engagements_last_meeting_booked\": \"2024-06-07T08:00:00Z\"\n            },\n            {\n                \"event_sk\": \"EVENT#05012886-ca4c-49ca-b43c-9ab2a1e6b4a3\",\n                \"user_role\": \"owner\",\n                \"email\": \"pachakili@gmail.com\",\n                \"notification_type\": \"form-submission\",\n                \"owner_id\": \"682232841\",\n                \"event_type\": \"one-on-one\",\n                \"meeting_start_time\": \"2024-06-06T08:15:00Z\",\n                \"modified\": \"2024-06-05T13:22:27.053Z\",\n                \"meeting_end_time\": \"2024-06-06T08:45:00Z\",\n                \"engagement_source\": \"MEETINGS\",\n                \"meeting_title\": \"test\",\n                \"firstname\": \"pacha\",\n                \"event_title\": \"test\",\n                \"event_form_info\": [\n                    {\n                        \"provider\": \"hubspot\",\n                        \"forms\": [\n                            {\n                                \"name\": \"blog Comment Form 162754088311 (English - United States)\",\n                                \"id\": \"d2ee1496-5170-47df-9394-5b46094d6a5f\"\n                            }\n                        ]\n                    }\n                ],\n                \"meeting_id\": \"53929309965\",\n                \"deliveredAt\": \"2024-06-05T13:22:27.052Z\",\n                \"event_name\": \"abcd\",\n                \"object_source\": \"hubspot\",\n                \"form_name\": \"Meetings Link: arulkumar/testing\",\n                \"user-id\": \"LEAD#pachakili@gmail.com\",\n                \"hubId\": 44888444,\n                \"source\": \"hubspot-scheduling\",\n                \"entity\": \"lead-table-dev\",\n                \"first_conversion_event_name\": \"Meetings Link: arulkumar/testing\",\n                \"created\": \"2024-06-05T13:22:27.053Z\",\n                \"hermetic_user_id\": \"K8KeGDuOtWMV0DM5BewbB2QmWcL2\",\n                \"lastname\": \"kili\",\n                \"meeting_source\": \"MEETINGS_PUBLIC\",\n                \"hermetic_owner_id\": \"K8KeGDuOtWMV0DM5BewbB2QmWcL2\",\n                \"fullname\": \"pachakili\",\n                \"event_sales_reps\": [],\n                \"engagements_last_meeting_booked\": \"2024-06-06T08:15:00Z\"\n            }\n        ],\n        \"ScannedCount\": 9\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Cronofy revoke",
+			"item": [
+				{
+					"name": "revoke app",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/event/revoke?userId=K8KeGDuOtWMV0DM5BewbB2QmWcL2&appName=google",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"event",
+								"revoke"
+							],
+							"query": [
+								{
+									"key": "userId",
+									"value": "K8KeGDuOtWMV0DM5BewbB2QmWcL2"
+								},
+								{
+									"key": "appName",
+									"value": "google"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "success response",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/event/revoke?userId=K8KeGDuOtWMV0DM5BewbB2QmWcL2&appName=google",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"event",
+										"revoke"
+									],
+									"query": [
+										{
+											"key": "userId",
+											"value": "K8KeGDuOtWMV0DM5BewbB2QmWcL2"
+										},
+										{
+											"key": "appName",
+											"value": "google"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "136"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"88-sO1vFeKgpCMaDJxZU6XOjHHPVvE\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 18 Jun 2024 14:44:13 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"$metadata\": {\n        \"httpStatusCode\": 200,\n        \"requestId\": \"D0IVFOMJLV4U03MIHEJBHI2UENVV4KQNSO5AEMVJF66Q9ASUAAJG\",\n        \"attempts\": 1,\n        \"totalRetryDelay\": 0\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Register-U.P",
+			"item": [
+				{
+					"name": "v3-signup",
+					"item": [
+						{
+							"name": "signup",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"localId\": \"im9m4ajM3QTnVAbz7kBIuTxiZmA2\",\r\n    \"email\": \"nagaraj@amwhiz.com\",\r\n    \"displayName\": \"Nagaraj R\",\r\n    \"photoUrl\": \"https://lh3.googleusercontent.com/a/ACg8ocItREy0ap59CrRizdmQg70n__Divb-tj1lAbJy1UqfeUA=s96-c\",\r\n    \"emailVerified\": true,\r\n    \"username\": \"Nagaraj R\",\r\n    // \"password\": \"Nabi0229##\",\r\n    \"providerUserInfo\": [\r\n        {\r\n            \"providerId\": \"google.com\",\r\n            \"displayName\": \"Nagaraj R\",\r\n            \"photoUrl\": \"https://lh3.googleusercontent.com/a/ACg8ocItREy0ap59CrRizdmQg70n__Divb-tj1lAbJy1UqfeUA=s96-c\",\r\n            \"federatedId\": \"im9m4ajM3QTnVAbz7kBIuTxiZmA2\",\r\n            \"email\": \"nagaraj@amwhiz.com\",\r\n            \"rawId\": \"im9m4ajM3QTnVAbz7kBIuTxiZmA2\"\r\n        },\r\n        {\r\n            \"providerId\": \"password\",\r\n            \"uid\": \"nagaraj@amwhiz.com\",\r\n            \"displayName\": \"Nagaraj R\",\r\n            \"email\": \"nagaraj@amwhiz.com\",\r\n            \"phoneNumber\": null,\r\n            \"photoURL\": \"https://lh3.googleusercontent.com/a/ACg8ocJbxZVsWKYSd2vMuVLsG-o-3MHgXLip2Us63cSBenRotO8U7NE=s96-c\"\r\n        }\r\n    ],\r\n    \"validSince\": \"Wed, 31 Jan 2024 09:45:00 GMT\",\r\n    \"lastLoginAt\": \"Tue, 30 Apr 2024 10:29:48 GMT\",\r\n    \"createdAt\": \"Wed, 31 Jan 2024 09:45:00 GMT\",\r\n    \"lastRefreshAt\": \"Tue, 30 Apr 2024 10:29:48 GMT\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/auth/register/signup",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"auth",
+										"register",
+										"signup"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "success response 1",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6ImRmOGIxNTFiY2Q5MGQ1YjMwMjBlNTNhMzYyZTRiMzA3NTYzMzdhNjEiLCJ0eXAiOiJKV1QifQ.eyJuYW1lIjoiQXJ1bGt1bWFyIFRoaXlhZ2FyYWphbiIsInBpY3R1cmUiOiJodHRwczovL2xoMy5nb29nbGV1c2VyY29udGVudC5jb20vYS9BQ2c4b2NKYnhaVnNXS1lTZDJ2TXVWTHNHLW8tM01IZ1hMaXAyVXM2M2NTQmVuUm90TzhVN05FPXM5Ni1jIiwiaXNzIjoiaHR0cHM6Ly9zZWN1cmV0b2tlbi5nb29nbGUuY29tL2hlcm1ldGljLWFpIiwiYXVkIjoiaGVybWV0aWMtYWkiLCJhdXRoX3RpbWUiOjE3MTg5NTg4NTQsInVzZXJfaWQiOiJLOEtlR0R1T3RXTVYwRE01QmV3YkIyUW1XY0wyIiwic3ViIjoiSzhLZUdEdU90V01WMERNNUJld2JCMlFtV2NMMiIsImlhdCI6MTcxODk1ODg1NCwiZXhwIjoxNzE4OTYyNDU0LCJlbWFpbCI6ImFydWxrdW1hckBhbXdoaXouY29tIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsImZpcmViYXNlIjp7ImlkZW50aXRpZXMiOnsiZ29vZ2xlLmNvbSI6WyIxMDA5ODU1MDk2ODEyMzkxMDEwNjciXSwiZW1haWwiOlsiYXJ1bGt1bWFyQGFtd2hpei5jb20iXX0sInNpZ25faW5fcHJvdmlkZXIiOiJwYXNzd29yZCJ9fQ.V4lP8L-9hv2RbIuII4acr1oKaUVL97mGKFWWqTFkBuQvH4F8gFAlZxHsDdDUMYKy7KnR3WN0j7ub-Nz1grz3eJpcR_MslZK3egQ1Zt3eT86JfrC_slldl-CRmTDe9jnraR3ETx_pPk-Lt-Wbt1Qu874U_ILKVLP2KdiMk9JV3Uf4NZPq6GQm4Pa0-Hi9K3W99QiQjtJNaK5WygK_pyBGpm6dF1m_Fpm2MMlDOghYsFLyImfyjiTK8JFQuUgRqX5JuqrzsclEPUrbOx2j5Bpi5umg4YPm1NVtqU2qzqM8SUd0M07Fk7TmQ4JppbxltCrwLyh-vPJAAn7iZ87pCgEDog",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"localId\": \"im9m4ajM3QTnVAbz7kBIuTxiZmA2\",\r\n    \"email\": \"nagaraj@amwhiz.com\",\r\n    \"displayName\": \"Nagaraj R\",\r\n    \"photoUrl\": \"https://lh3.googleusercontent.com/a/ACg8ocItREy0ap59CrRizdmQg70n__Divb-tj1lAbJy1UqfeUA=s96-c\",\r\n    \"emailVerified\": true,\r\n    \"username\": \"Nagaraj R\",\r\n    \"password\": \"Nabi0229##\",\r\n    \"providerUserInfo\": [\r\n        {\r\n            \"providerId\": \"google.com\",\r\n            \"displayName\": \"Nagaraj R\",\r\n            \"photoUrl\": \"https://lh3.googleusercontent.com/a/ACg8ocItREy0ap59CrRizdmQg70n__Divb-tj1lAbJy1UqfeUA=s96-c\",\r\n            \"federatedId\": \"im9m4ajM3QTnVAbz7kBIuTxiZmA2\",\r\n            \"email\": \"nagaraj@amwhiz.com\",\r\n            \"rawId\": \"im9m4ajM3QTnVAbz7kBIuTxiZmA2\"\r\n        },\r\n        {\r\n            \"providerId\": \"password\",\r\n            \"uid\": \"nagaraj@amwhiz.com\",\r\n            \"displayName\": \"Nagaraj R\",\r\n            \"email\": \"nagaraj@amwhiz.com\",\r\n            \"phoneNumber\": null,\r\n            \"photoURL\": \"https://lh3.googleusercontent.com/a/ACg8ocJbxZVsWKYSd2vMuVLsG-o-3MHgXLip2Us63cSBenRotO8U7NE=s96-c\"\r\n        }\r\n    ],\r\n    \"validSince\": \"Wed, 31 Jan 2024 09:45:00 GMT\",\r\n    \"lastLoginAt\": \"Tue, 30 Apr 2024 10:29:48 GMT\",\r\n    \"createdAt\": \"Wed, 31 Jan 2024 09:45:00 GMT\",\r\n    \"lastRefreshAt\": \"Tue, 30 Apr 2024 10:29:48 GMT\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://localhost:3000/auth/register/v3/signup",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"auth",
+												"register",
+												"v3",
+												"signup"
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "1536"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"600-CFRRlY2e7E5CrzsiPulUe6bTgGk\""
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 21 Jun 2024 10:41:52 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": {\n        \"message\": \"User successfully created!\",\n        \"is_onboarding_needed\": false,\n        \"token\": \"amwiz@eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsb2NhbElkIjoiaW05bTRhak0zUVRuVkFiejdrQkl1VHhpWm1BMiIsImVtYWlsIjoibmFnYXJhakBhbXdoaXouY29tIiwiZGlzcGxheU5hbWUiOiJOYWdhcmFqIFIiLCJwaG90b1VybCI6Imh0dHBzOi8vbGgzLmdvb2dsZXVzZXJjb250ZW50LmNvbS9hL0FDZzhvY0l0UkV5MGFwNTlDclJpemRtUWc3MG5fX0RpdmItdGoxbEFiSnkxVXFmZVVBPXM5Ni1jIiwiZW1haWxWZXJpZmllZCI6dHJ1ZSwidXNlcm5hbWUiOiJOYWdhcmFqIFIiLCJwYXNzd29yZCI6Ik5hYmkwMjI5IyMiLCJwcm92aWRlclVzZXJJbmZvIjpbeyJwcm92aWRlcklkIjoiZ29vZ2xlLmNvbSIsImRpc3BsYXlOYW1lIjoiTmFnYXJhaiBSIiwicGhvdG9VcmwiOiJodHRwczovL2xoMy5nb29nbGV1c2VyY29udGVudC5jb20vYS9BQ2c4b2NJdFJFeTBhcDU5Q3JSaXpkbVFnNzBuX19EaXZiLXRqMWxBYkp5MVVxZmVVQT1zOTYtYyIsImZlZGVyYXRlZElkIjoiaW05bTRhak0zUVRuVkFiejdrQkl1VHhpWm1BMiIsImVtYWlsIjoibmFnYXJhakBhbXdoaXouY29tIiwicmF3SWQiOiJpbTltNGFqTTNRVG5WQWJ6N2tCSXVUeGlabUEyIn0seyJwcm92aWRlcklkIjoicGFzc3dvcmQiLCJ1aWQiOiJuYWdhcmFqQGFtd2hpei5jb20iLCJkaXNwbGF5TmFtZSI6Ik5hZ2FyYWogUiIsImVtYWlsIjoibmFnYXJhakBhbXdoaXouY29tIiwicGhvbmVOdW1iZXIiOm51bGwsInBob3RvVVJMIjoiaHR0cHM6Ly9saDMuZ29vZ2xldXNlcmNvbnRlbnQuY29tL2EvQUNnOG9jSmJ4WlZzV0tZU2Qydk11VkxzRy1vLTNNSGdYTGlwMlVzNjNjU0JlblJvdE84VTdORT1zOTYtYyJ9XSwidmFsaWRTaW5jZSI6IldlZCwgMzEgSmFuIDIwMjQgMDk6NDU6MDAgR01UIiwibGFzdExvZ2luQXQiOiJUdWUsIDMwIEFwciAyMDI0IDEwOjI5OjQ4IEdNVCIsImNyZWF0ZWRBdCI6IldlZCwgMzEgSmFuIDIwMjQgMDk6NDU6MDAgR01UIiwibGFzdFJlZnJlc2hBdCI6IlR1ZSwgMzAgQXByIDIwMjQgMTA6Mjk6NDggR01UIiwiaWF0IjoxNzE4OTY2NTEyLCJleHAiOjE3MTk1NzEzMTJ9.PQRLISkt-cL3MeJLyDvjtqckZy_YxsAq4I3m6cRdcJ8\"\n    }\n}"
+								},
+								{
+									"name": "success response 2",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6ImRmOGIxNTFiY2Q5MGQ1YjMwMjBlNTNhMzYyZTRiMzA3NTYzMzdhNjEiLCJ0eXAiOiJKV1QifQ.eyJuYW1lIjoiQXJ1bGt1bWFyIFRoaXlhZ2FyYWphbiIsInBpY3R1cmUiOiJodHRwczovL2xoMy5nb29nbGV1c2VyY29udGVudC5jb20vYS9BQ2c4b2NKYnhaVnNXS1lTZDJ2TXVWTHNHLW8tM01IZ1hMaXAyVXM2M2NTQmVuUm90TzhVN05FPXM5Ni1jIiwiaXNzIjoiaHR0cHM6Ly9zZWN1cmV0b2tlbi5nb29nbGUuY29tL2hlcm1ldGljLWFpIiwiYXVkIjoiaGVybWV0aWMtYWkiLCJhdXRoX3RpbWUiOjE3MTg5NTg4NTQsInVzZXJfaWQiOiJLOEtlR0R1T3RXTVYwRE01QmV3YkIyUW1XY0wyIiwic3ViIjoiSzhLZUdEdU90V01WMERNNUJld2JCMlFtV2NMMiIsImlhdCI6MTcxODk1ODg1NCwiZXhwIjoxNzE4OTYyNDU0LCJlbWFpbCI6ImFydWxrdW1hckBhbXdoaXouY29tIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsImZpcmViYXNlIjp7ImlkZW50aXRpZXMiOnsiZ29vZ2xlLmNvbSI6WyIxMDA5ODU1MDk2ODEyMzkxMDEwNjciXSwiZW1haWwiOlsiYXJ1bGt1bWFyQGFtd2hpei5jb20iXX0sInNpZ25faW5fcHJvdmlkZXIiOiJwYXNzd29yZCJ9fQ.V4lP8L-9hv2RbIuII4acr1oKaUVL97mGKFWWqTFkBuQvH4F8gFAlZxHsDdDUMYKy7KnR3WN0j7ub-Nz1grz3eJpcR_MslZK3egQ1Zt3eT86JfrC_slldl-CRmTDe9jnraR3ETx_pPk-Lt-Wbt1Qu874U_ILKVLP2KdiMk9JV3Uf4NZPq6GQm4Pa0-Hi9K3W99QiQjtJNaK5WygK_pyBGpm6dF1m_Fpm2MMlDOghYsFLyImfyjiTK8JFQuUgRqX5JuqrzsclEPUrbOx2j5Bpi5umg4YPm1NVtqU2qzqM8SUd0M07Fk7TmQ4JppbxltCrwLyh-vPJAAn7iZ87pCgEDog",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"localId\": \"im9m4ajM3QTnVAbz7kBIuTxiZmA2\",\r\n    \"email\": \"nagaraj@amwhiz.com\",\r\n    \"displayName\": \"Nagaraj R\",\r\n    \"photoUrl\": \"https://lh3.googleusercontent.com/a/ACg8ocItREy0ap59CrRizdmQg70n__Divb-tj1lAbJy1UqfeUA=s96-c\",\r\n    \"emailVerified\": true,\r\n    \"username\": \"Nagaraj R\",\r\n    \"password\": \"Nabi0229##\",\r\n    \"providerUserInfo\": [\r\n        {\r\n            \"providerId\": \"google.com\",\r\n            \"displayName\": \"Nagaraj R\",\r\n            \"photoUrl\": \"https://lh3.googleusercontent.com/a/ACg8ocItREy0ap59CrRizdmQg70n__Divb-tj1lAbJy1UqfeUA=s96-c\",\r\n            \"federatedId\": \"im9m4ajM3QTnVAbz7kBIuTxiZmA2\",\r\n            \"email\": \"nagaraj@amwhiz.com\",\r\n            \"rawId\": \"im9m4ajM3QTnVAbz7kBIuTxiZmA2\"\r\n        },\r\n        {\r\n            \"providerId\": \"password\",\r\n            \"uid\": \"nagaraj@amwhiz.com\",\r\n            \"displayName\": \"Nagaraj R\",\r\n            \"email\": \"nagaraj@amwhiz.com\",\r\n            \"phoneNumber\": null,\r\n            \"photoURL\": \"https://lh3.googleusercontent.com/a/ACg8ocJbxZVsWKYSd2vMuVLsG-o-3MHgXLip2Us63cSBenRotO8U7NE=s96-c\"\r\n        }\r\n    ],\r\n    \"validSince\": \"Wed, 31 Jan 2024 09:45:00 GMT\",\r\n    \"lastLoginAt\": \"Tue, 30 Apr 2024 10:29:48 GMT\",\r\n    \"createdAt\": \"Wed, 31 Jan 2024 09:45:00 GMT\",\r\n    \"lastRefreshAt\": \"Tue, 30 Apr 2024 10:29:48 GMT\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://localhost:3000/auth/register/v3/signup",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"auth",
+												"register",
+												"v3",
+												"signup"
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "1529"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"5f9-XrmL6NJ7Vw5e+3RrxO/uu48jzG8\""
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 21 Jun 2024 10:42:29 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": {\n        \"message\": \"User Already Exists\",\n        \"is_onboarding_needed\": false,\n        \"token\": \"amwiz@eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsb2NhbElkIjoiaW05bTRhak0zUVRuVkFiejdrQkl1VHhpWm1BMiIsImVtYWlsIjoibmFnYXJhakBhbXdoaXouY29tIiwiZGlzcGxheU5hbWUiOiJOYWdhcmFqIFIiLCJwaG90b1VybCI6Imh0dHBzOi8vbGgzLmdvb2dsZXVzZXJjb250ZW50LmNvbS9hL0FDZzhvY0l0UkV5MGFwNTlDclJpemRtUWc3MG5fX0RpdmItdGoxbEFiSnkxVXFmZVVBPXM5Ni1jIiwiZW1haWxWZXJpZmllZCI6dHJ1ZSwidXNlcm5hbWUiOiJOYWdhcmFqIFIiLCJwYXNzd29yZCI6Ik5hYmkwMjI5IyMiLCJwcm92aWRlclVzZXJJbmZvIjpbeyJwcm92aWRlcklkIjoiZ29vZ2xlLmNvbSIsImRpc3BsYXlOYW1lIjoiTmFnYXJhaiBSIiwicGhvdG9VcmwiOiJodHRwczovL2xoMy5nb29nbGV1c2VyY29udGVudC5jb20vYS9BQ2c4b2NJdFJFeTBhcDU5Q3JSaXpkbVFnNzBuX19EaXZiLXRqMWxBYkp5MVVxZmVVQT1zOTYtYyIsImZlZGVyYXRlZElkIjoiaW05bTRhak0zUVRuVkFiejdrQkl1VHhpWm1BMiIsImVtYWlsIjoibmFnYXJhakBhbXdoaXouY29tIiwicmF3SWQiOiJpbTltNGFqTTNRVG5WQWJ6N2tCSXVUeGlabUEyIn0seyJwcm92aWRlcklkIjoicGFzc3dvcmQiLCJ1aWQiOiJuYWdhcmFqQGFtd2hpei5jb20iLCJkaXNwbGF5TmFtZSI6Ik5hZ2FyYWogUiIsImVtYWlsIjoibmFnYXJhakBhbXdoaXouY29tIiwicGhvbmVOdW1iZXIiOm51bGwsInBob3RvVVJMIjoiaHR0cHM6Ly9saDMuZ29vZ2xldXNlcmNvbnRlbnQuY29tL2EvQUNnOG9jSmJ4WlZzV0tZU2Qydk11VkxzRy1vLTNNSGdYTGlwMlVzNjNjU0JlblJvdE84VTdORT1zOTYtYyJ9XSwidmFsaWRTaW5jZSI6IldlZCwgMzEgSmFuIDIwMjQgMDk6NDU6MDAgR01UIiwibGFzdExvZ2luQXQiOiJUdWUsIDMwIEFwciAyMDI0IDEwOjI5OjQ4IEdNVCIsImNyZWF0ZWRBdCI6IldlZCwgMzEgSmFuIDIwMjQgMDk6NDU6MDAgR01UIiwibGFzdFJlZnJlc2hBdCI6IlR1ZSwgMzAgQXByIDIwMjQgMTA6Mjk6NDggR01UIiwiaWF0IjoxNzE4OTY2NTQ5LCJleHAiOjE3MTk1NzEzNDl9.0g7raSST9-dVyk_pP8fEMIKsWn8ZUmsIL8lc9WwQF1M\"\n    }\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "v3-signin",
+					"item": [
+						{
+							"name": "sign-in",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6ImYwOGU2ZTNmNzg4ZDYwMTk0MDA1ZGJiYzE5NDc0YmY5Mjg5ZDM5ZWEiLCJ0eXAiOiJKV1QifQ.eyJuYW1lIjoiQXJ1bGt1bWFyIFRoaXlhZ2FyYWphbiIsInBpY3R1cmUiOiJodHRwczovL2xoMy5nb29nbGV1c2VyY29udGVudC5jb20vYS9BQ2c4b2NKYnhaVnNXS1lTZDJ2TXVWTHNHLW8tM01IZ1hMaXAyVXM2M2NTQmVuUm90TzhVN05FPXM5Ni1jIiwiaXNzIjoiaHR0cHM6Ly9zZWN1cmV0b2tlbi5nb29nbGUuY29tL2hlcm1ldGljLWFpIiwiYXVkIjoiaGVybWV0aWMtYWkiLCJhdXRoX3RpbWUiOjE3MTkyOTM1MTQsInVzZXJfaWQiOiJLOEtlR0R1T3RXTVYwRE01QmV3YkIyUW1XY0wyIiwic3ViIjoiSzhLZUdEdU90V01WMERNNUJld2JCMlFtV2NMMiIsImlhdCI6MTcxOTI5MzUxNCwiZXhwIjoxNzE5Mjk3MTE0LCJlbWFpbCI6ImFydWxrdW1hckBhbXdoaXouY29tIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsImZpcmViYXNlIjp7ImlkZW50aXRpZXMiOnsiZ29vZ2xlLmNvbSI6WyIxMDA5ODU1MDk2ODEyMzkxMDEwNjciXSwiZW1haWwiOlsiYXJ1bGt1bWFyQGFtd2hpei5jb20iXX0sInNpZ25faW5fcHJvdmlkZXIiOiJwYXNzd29yZCJ9fQ.bgwBCPlMHcAlwcs6XqRm0ZZKynOn9_RI8MfAYJ8bC8mfECua-xRP0VX-2SzLaAqMkNkFqeSk4tEa73b4GpYVYw0OPI1gVWiilQud-x-Vfs6lofQ5sXNMyGtwyC19ExYo7_lHvuojiVsD32eQFg78n4veMjxca60x0bGR0fKdvKG0Cw8BI0Lq62BohORJBhJ6Gtg-6ZvVDGlDIBqzTy4lltxwR-1Dlbqaki_hn2PTyX7sYXbF1hcZn1P557mnSPu-JUSxE0KdWn6InVRMIp_mXJbC1187AjCEyQwhdmjx_CJOGc3htKaeumcg4t7KMidvyNYM2Cz7hTkLz-JuTQ3IMg",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"localId\": \"K8KeGDuOtWMV0DM5BewbB2QmWcL2\",\n    \"email\": \"arulkumar@amwhiz.com\",\n    \"displayName\": \"Arulkumar Thiyagarajan\",\n    \"photoUrl\": \"https://lh3.googleusercontent.com/a/ACg8ocJbxZVsWKYSd2vMuVLsG-o-3MHgXLip2Us63cSBenRotO8U7NE=s96-c\",\n    \"emailVerified\": true,\n    \"providerUserInfo\": [\n        {\n            \"providerId\": \"google.com\",\n            \"uid\": \"100985509681239101067\",\n            \"displayName\": \"Arulkumar Thiyagarajan\",\n            \"email\": \"arulkumar@amwhiz.com\",\n            \"phoneNumber\": null,\n            \"photoURL\": \"https://lh3.googleusercontent.com/a/ACg8ocJbxZVsWKYSd2vMuVLsG-o-3MHgXLip2Us63cSBenRotO8U7NE=s96-c\"\n        },\n        {\n            \"providerId\": \"password\",\n            \"uid\": \"arulkumar@amwhiz.com\",\n            \"displayName\": \"Arulkumar Thiyagarajan\",\n            \"email\": \"arulkumar@amwhiz.com\",\n            \"phoneNumber\": null,\n            \"photoURL\": \"https://lh3.googleusercontent.com/a/ACg8ocJbxZVsWKYSd2vMuVLsG-o-3MHgXLip2Us63cSBenRotO8U7NE=s96-c\"\n        }\n    ],\n    \"validSince\": \"Wed, 14 Feb 2024 12:46:54 GMT\",\n    \"lastLoginAt\": \"Tue, 25 Jun 2024 05:22:03 GMT\",\n    \"createdAt\": \"Wed, 14 Feb 2024 12:46:54 GMT\",\n    \"lastRefreshAt\": \"Tue, 25 Jun 2024 05:22:03 GMT\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://dev-capi.hermetic.ai/auth/register/signin",
+									"protocol": "https",
+									"host": [
+										"dev-capi",
+										"hermetic",
+										"ai"
+									],
+									"path": [
+										"auth",
+										"register",
+										"signin"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "success response",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"localId\": \"im9m4ajM3QTnVAbz7kBIuTxiZmA2\",\n    \"email\": \"nagaraj@amwhiz.com\",\n    \"displayName\": \"Nagaraj R\",\n    \"photoUrl\": \"https://lh3.googleusercontent.com/a/ACg8ocItREy0ap59CrRizdmQg70n__Divb-tj1lAbJy1UqfeUA=s96-c\",\n    \"emailVerified\": true,\n    \"username\": \"Nagaraj R\",\n    \"password\": \"Nabi0229**\",\n    \"providerUserInfo\": [\n        {\n            \"providerId\": \"google.com\",\n            \"displayName\": \"Nagaraj R\",\n            \"photoUrl\": \"https://lh3.googleusercontent.com/a/ACg8ocItREy0ap59CrRizdmQg70n__Divb-tj1lAbJy1UqfeUA=s96-c\",\n            \"federatedId\": \"im9m4ajM3QTnVAbz7kBIuTxiZmA2\",\n            \"email\": \"nagaraj@amwhiz.com\",\n            \"rawId\": \"im9m4ajM3QTnVAbz7kBIuTxiZmA2\"\n        },\n        {\n            \"providerId\": \"password\",\n            \"uid\": \"nagaraj@amwhiz.com\",\n            \"displayName\": \"Nagaraj R\",\n            \"email\": \"nagaraj@amwhiz.com\",\n            \"phoneNumber\": null,\n            \"photoURL\": \"https://lh3.googleusercontent.com/a/ACg8ocJbxZVsWKYSd2vMuVLsG-o-3MHgXLip2Us63cSBenRotO8U7NE=s96-c\"\n        }\n    ],\n    \"validSince\": \"Wed, 31 Jan 2024 09:45:00 GMT\",\n    \"lastLoginAt\": \"Tue, 30 Apr 2024 10:29:48 GMT\",\n    \"createdAt\": \"Wed, 31 Jan 2024 09:45:00 GMT\",\n    \"lastRefreshAt\": \"Tue, 30 Apr 2024 10:29:48 GMT\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/auth/register/signin",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"auth",
+												"register",
+												"signin"
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Access-Control-Allow-Credentials",
+											"value": "true"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "36"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"24-TyrjVAagRkARzoxw6H7Pr84SxHQ\""
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 24 Jun 2024 14:40:25 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": \"User successfully signin!\"\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "appConnect",
+					"item": [
+						{
+							"name": "auth/app/install",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/app/install?userId=1234567&grantType=code&mode=dev&platform=hermeticForgoogle&redirect_url=http://localhost:8080/dashboard/settings/lead-forms/google",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"app",
+										"install"
+									],
+									"query": [
+										{
+											"key": "userId",
+											"value": "1234567"
+										},
+										{
+											"key": "grantType",
+											"value": "code"
+										},
+										{
+											"key": "mode",
+											"value": "dev"
+										},
+										{
+											"key": "platform",
+											"value": "hermeticForgoogle"
+										},
+										{
+											"key": "redirect_url",
+											"value": "http://localhost:8080/dashboard/settings/lead-forms/google"
+										},
+										{
+											"key": "provider",
+											"value": "google",
+											"disabled": true
+										},
+										{
+											"key": "code",
+											"value": "7Eap_ImwFKXwoKAbS4EXvGdlo7OoPXW6",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "success response 1",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:3000/app/install?userId=1234567&grantType=code&mode=dev&platform=hermeticForgoogle&redirect_url=http://localhost:8080/dashboard/settings/lead-forms/google",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"app",
+												"install"
+											],
+											"query": [
+												{
+													"key": "userId",
+													"value": "1234567"
+												},
+												{
+													"key": "grantType",
+													"value": "code"
+												},
+												{
+													"key": "mode",
+													"value": "dev"
+												},
+												{
+													"key": "platform",
+													"value": "hermeticForgoogle"
+												},
+												{
+													"key": "redirect_url",
+													"value": "http://localhost:8080/dashboard/settings/lead-forms/google"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Access-Control-Allow-Credentials",
+											"value": "true"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "246"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"f6-8deEgbjpq/UsUyCl84XL1npiYII\""
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 24 Jun 2024 14:42:58 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": \"https://app.cronofy.com/oauth/authorize?response_type=code&client_id=AIO4zPhJlNVpAPwVXz9rBsbHbHoBaUuV&redirect_uri=http://localhost:8080/dashboard/settings/lead-forms/google&scope=read_write&state=hermeticForgoogle&provider_name=google\"\n}"
+								},
+								{
+									"name": "success response 2",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:3000/auth/app/install?userId=1234567&grantType=token&mode=dev&platform=hermeticForgoogle&redirect_url=http://localhost:8080/dashboard/settings/lead-forms/google&code=7Eap_ImwFKXwoKAbS4EXvGdlo7OoPXW6",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"auth",
+												"app",
+												"install"
+											],
+											"query": [
+												{
+													"key": "userId",
+													"value": "1234567"
+												},
+												{
+													"key": "grantType",
+													"value": "token"
+												},
+												{
+													"key": "mode",
+													"value": "dev"
+												},
+												{
+													"key": "platform",
+													"value": "hermeticForgoogle"
+												},
+												{
+													"key": "redirect_url",
+													"value": "http://localhost:8080/dashboard/settings/lead-forms/google"
+												},
+												{
+													"key": "provider",
+													"value": "google",
+													"disabled": true
+												},
+												{
+													"key": "code",
+													"value": "7Eap_ImwFKXwoKAbS4EXvGdlo7OoPXW6"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Access-Control-Allow-Credentials",
+											"value": "true"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "145"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"91-y98XToHEuCKZZfbuulpfNrU7sLI\""
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 24 Jun 2024 14:44:28 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": {\n        \"$metadata\": {\n            \"httpStatusCode\": 200,\n            \"requestId\": \"J68D6VGMHSQ2A0RH5A1K0J0Q17VV4KQNSO5AEMVJF66Q9ASUAAJG\",\n            \"attempts\": 1,\n            \"totalRetryDelay\": 0\n        }\n    }\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "logout",
+					"item": [
+						{
+							"name": "New Request",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Auth-Me",
+			"item": [
+				{
+					"name": "auth/me",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer ya29.a0AXooCgsvN1RTmUEVV4YL73AWkGoTn2BM1AdEX_R45LEihhi9HBoE4yibQOZAgz-0RphzUME_GEB9fm9VjYAjXB1Rzex96dNMryCibAfoKYsK-o3fD5Fjax3iTl7HbmpKL-qVHXk_W96HWABEaJ7Jv_Bz6s55L46IxvsYaCgYKAcsSARASFQHGX2MipmsSmxn3_J9KPa6AtYNSpw0171",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/me?userId=1234567",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"me"
+							],
+							"query": [
+								{
+									"key": "userId",
+									"value": "1234567"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "success response",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer ya29.a0AXooCgsvN1RTmUEVV4YL73AWkGoTn2BM1AdEX_R45LEihhi9HBoE4yibQOZAgz-0RphzUME_GEB9fm9VjYAjXB1Rzex96dNMryCibAfoKYsK-o3fD5Fjax3iTl7HbmpKL-qVHXk_W96HWABEaJ7Jv_Bz6s55L46IxvsYaCgYKAcsSARASFQHGX2MipmsSmxn3_J9KPa6AtYNSpw0171",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:3000/me?userId=1234567",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"me"
+									],
+									"query": [
+										{
+											"key": "userId",
+											"value": "1234567"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "5377"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1501-rBe0po2sEq1vIFQKG1eOztHrKtY\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 24 Jun 2024 14:49:36 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"apps\": [\n            {\n                \"appName\": \"Google Calendar\",\n                \"description\": \"\\\"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis a vulputate nibh, nec aliquam felis. Sed et accumsan libero. Curabitur. 2743880\\\"\",\n                \"installation_status\": \"success\",\n                \"logo\": \"https://d1371a8i8fbl0b.cloudfront.net/images/google-calendar.svg\",\n                \"sk\": \"APP#GOOGLE\",\n                \"is_onboard\": true,\n                \"is_deleted\": false,\n                \"type\": [\n                    \"calendar\"\n                ],\n                \"redirect_url\": \"https://app.cronofy.com/oauth/authorize?response_type=code&client_id=AIO4zPhJlNVpAPwVXz9rBsbHbHoBaUuV&redirect_uri=https://dev-app.hermetic.ai/onboard/calendar&scope=read_write&state=appnameForgoogle&provider_name=google\"\n            },\n            {\n                \"appName\": \"Microsoft Outlook\",\n                \"description\": \"\\\"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis a vulputate nibh, nec aliquam felis. Sed et accumsan libero. Curabitur. 2743880\\\"\",\n                \"installation_status\": \"\",\n                \"logo\": \"https://d1371a8i8fbl0b.cloudfront.net/images/outlook.svg\",\n                \"sk\": \"APP#LIVE_CONNECT\",\n                \"is_onboard\": false,\n                \"is_deleted\": false,\n                \"type\": [\n                    \"calendar\"\n                ],\n                \"redirect_url\": \"https://app.cronofy.com/oauth/authorize?response_type=code&client_id=AIO4zPhJlNVpAPwVXz9rBsbHbHoBaUuV&redirect_uri=https://dev-app.hermetic.ai/onboard/calendar&scope=read_write&state=appnameForlive_connect&provider_name=live_connect\"\n            },\n            {\n                \"appName\": \"Exchange\",\n                \"description\": \"\\\"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis a vulputate nibh, nec aliquam felis. Sed et accumsan libero. Curabitur. 2743880\\\"\",\n                \"installation_status\": \"\",\n                \"logo\": \"https://d1371a8i8fbl0b.cloudfront.net/images/exchange.svg\",\n                \"sk\": \"APP#EXCHANGE\",\n                \"is_onboard\": false,\n                \"is_deleted\": false,\n                \"type\": [\n                    \"calendar\"\n                ],\n                \"redirect_url\": \"https://app.cronofy.com/oauth/authorize?response_type=code&client_id=AIO4zPhJlNVpAPwVXz9rBsbHbHoBaUuV&redirect_uri=https://dev-app.hermetic.ai/onboard/calendar&scope=read_write&state=appnameForexchange&provider_name=exchange\"\n            },\n            {\n                \"appName\": \"Apple Calendar\",\n                \"description\": \"\\\"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis a vulputate nibh, nec aliquam felis. Sed et accumsan libero. Curabitur. 2743880\\\"\",\n                \"installation_status\": \"\",\n                \"logo\": \"https://d1371a8i8fbl0b.cloudfront.net/images/apple.svg\",\n                \"sk\": \"APP#ICLOUD\",\n                \"is_onboard\": false,\n                \"is_deleted\": false,\n                \"type\": [\n                    \"calendar\"\n                ],\n                \"redirect_url\": \"https://app.cronofy.com/oauth/authorize?response_type=code&client_id=AIO4zPhJlNVpAPwVXz9rBsbHbHoBaUuV&redirect_uri=https://dev-app.hermetic.ai/onboard/calendar&scope=read_write&state=appnameForapple&provider_name=apple\"\n            },\n            {\n                \"appName\": \"Office 365\",\n                \"description\": \"\\\"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis a vulputate nibh, nec aliquam felis. Sed et accumsan libero. Curabitur. 2743880\\\"\",\n                \"installation_status\": \"\",\n                \"logo\": \"https://d1371a8i8fbl0b.cloudfront.net/images/office-365.png\",\n                \"sk\": \"APP#OFFICE365\",\n                \"is_onboard\": false,\n                \"is_deleted\": false,\n                \"type\": [\n                    \"calendar\"\n                ],\n                \"redirect_url\": \"https://app.cronofy.com/oauth/authorize?response_type=code&client_id=AIO4zPhJlNVpAPwVXz9rBsbHbHoBaUuV&redirect_uri=https://dev-app.hermetic.ai/onboard/calendar&scope=read_write&state=appnameForoffice365&provider_name=office365\"\n            }\n        ],\n        \"subscription_enabled\": false,\n        \"subscription_plan_canceled\": false,\n        \"pause_ai\": false,\n        \"crm\": [\n            {\n                \"appName\": \"HubSpot\",\n                \"description\": \"\\\"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis a vulputate nibh, nec aliquam felis. Sed et accumsan libero. Curabitur. 2743880\\\"\",\n                \"installation_status\": \"success\",\n                \"logo\": \"https://d1371a8i8fbl0b.cloudfront.net/images/hubspot.svg\",\n                \"sk\": \"APP#HUBSPOT\",\n                \"is_onboard\": true,\n                \"is_deleted\": false,\n                \"type\": [\n                    \"crm\",\n                    \"forms\",\n                    \"meetings\"\n                ],\n                \"redirect_url\": \"https://app.hubspot.com/oauth/authorize?client_id=108f1173-1e51-4218-8299-69fd587d1c96&redirect_uri=https://dev-app.hermetic.ai/onboard/crm&scope=crm.objects.contacts.read%20crm.objects.contacts.write%20crm.schemas.contacts.read%20crm.schemas.contacts.write%20oauth%20timeline%20forms%20content%20actions%20forms-uploaded-files%20crm.objects.owners.read&state=appnameForhubspot\"\n            }\n        ],\n        \"current_step\": 0,\n        \"role\": \"owner\",\n        \"form\": [\n            {\n                \"appName\": \"HubSpot\",\n                \"description\": \"\\\"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis a vulputate nibh, nec aliquam felis. Sed et accumsan libero. Curabitur. 2743880\\\"\",\n                \"installation_status\": \"success\",\n                \"logo\": \"https://d1371a8i8fbl0b.cloudfront.net/images/hubspot.svg\",\n                \"sk\": \"APP#HUBSPOT\",\n                \"is_onboard\": true,\n                \"is_deleted\": false,\n                \"type\": [\n                    \"crm\",\n                    \"forms\",\n                    \"meetings\"\n                ],\n                \"redirect_url\": \"https://app.hubspot.com/oauth/authorize?client_id=108f1173-1e51-4218-8299-69fd587d1c96&redirect_uri=https://dev-app.hermetic.ai/onboard/crm&scope=crm.objects.contacts.read%20crm.objects.contacts.write%20crm.schemas.contacts.read%20crm.schemas.contacts.write%20oauth%20timeline%20forms%20content%20actions%20forms-uploaded-files%20crm.objects.owners.read&state=appnameForhubspot\"\n            },\n            {\n                \"appName\": \"Typeform\",\n                \"description\": \"\\\"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis a vulputate nibh, nec aliquam felis. Sed et accumsan libero. Curabitur. 2743880\\\"\",\n                \"installation_status\": \"success\",\n                \"logo\": \"https://d1371a8i8fbl0b.cloudfront.net/images/typeform.svg\",\n                \"sk\": \"APP#TYPEFORM\",\n                \"is_onboard\": true,\n                \"is_deleted\": false,\n                \"type\": [\n                    \"forms\"\n                ],\n                \"redirect_url\": \"https://api.typeform.com/oauth/authorize?client_id=GJYezFkJ72WHmBCN3N7sUpugKZzSTaFvxvzwocmHWn6j&redirect_uri=https://dev-app.hermetic.ai/dashboard/settings/lead-forms&scope=accounts:read+forms:read+webhooks:write&state=appnameFortypeform\"\n            }\n        ],\n        \"is_onboard\": false,\n        \"calendarsList\": null,\n        \"meeting_info\": null\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Update-user-details",
+			"item": [
+				{
+					"name": "user/details",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"user_availablity\": {\r\n        \"from\": \"09:00 AM\",\r\n        \"to\": \"10:00 AM\",\r\n        \"workingDays\": [\r\n            \"Monday\"\r\n        ],\r\n        \"timezone\": \"UTC\"\r\n    },\r\n    \"meeting_info\": [\r\n        {\r\n            \"meeting_location\": \"Google Meet\",\r\n            \"platform\": \"Google Meet\"\r\n        }\r\n    ],\r\n    \"calendarsList\": [\r\n        {\r\n            \"calendar_id\": \"nagaraj@amwhiz.com\",\r\n            \"calendar_name\": \"nagaraj@amwhiz.com\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/user/details?userId=im9m4ajM3QTnVAbz7kBIuTxiZmA2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"details"
+							],
+							"query": [
+								{
+									"key": "userId",
+									"value": "im9m4ajM3QTnVAbz7kBIuTxiZmA2"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "success response",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"user_availablity\": {\r\n        \"from\": \"09:00 AM\",\r\n        \"to\": \"10:00 AM\",\r\n        \"workingDays\": [\r\n            \"Monday\"\r\n        ],\r\n        \"timezone\": \"UTC\"\r\n    },\r\n    \"meeting_info\": [\r\n        {\r\n            \"meeting_location\": \"Google Meet\",\r\n            \"platform\": \"Google Meet\"\r\n        }\r\n    ],\r\n    \"calendarsList\": [\r\n        {\r\n            \"calendar_id\": \"nagaraj@amwhiz.com\",\r\n            \"calendar_name\": \"nagaraj@amwhiz.com\"\r\n        }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/user/details?userId=im9m4ajM3QTnVAbz7kBIuTxiZmA2",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"user",
+										"details"
+									],
+									"query": [
+										{
+											"key": "userId",
+											"value": "im9m4ajM3QTnVAbz7kBIuTxiZmA2"
+										}
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "145"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"91-8TSIxn6SOSWdKFbvJLXtDB7xAMs\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 24 Jun 2024 14:51:49 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"$metadata\": {\n            \"httpStatusCode\": 200,\n            \"requestId\": \"4P6IS4G9T3HVHLOIM7QU42AQ3FVV4KQNSO5AEMVJF66Q9ASUAAJG\",\n            \"attempts\": 1,\n            \"totalRetryDelay\": 0\n        }\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "User-Management",
+			"item": [
+				{
+					"name": "user/management",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/user/management?userId=im9m4ajM3QTnVAbz7kBIuTxiZmA2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"management"
+							],
+							"query": [
+								{
+									"key": "userId",
+									"value": "im9m4ajM3QTnVAbz7kBIuTxiZmA2"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/user/management?userId=im9m4ajM3QTnVAbz7kBIuTxiZmA2",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"user",
+										"management"
+									],
+									"query": [
+										{
+											"key": "userId",
+											"value": "im9m4ajM3QTnVAbz7kBIuTxiZmA2"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "232"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"e8-O51QrIAysk619lw7B9+phvxhwVQ\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 17 Jun 2024 18:43:00 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": [\n        {\n            \"role\": \"sales\",\n            \"owner_id\": \"im9m4ajM3QTnVAbz7kBIuTxiZmA2\",\n            \"email\": \"naabgi35@gmail.com\",\n            \"name\": \"naabgi35\",\n            \"is_onboard\": false,\n            \"meeting_info\": null,\n            \"current_step\": 0,\n            \"user_availablity\": null,\n            \"user_id\": \"USER#naabgi35@gmail.com\"\n        }\n    ]\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Send-Invite",
+			"item": [
+				{
+					"name": "send/invite",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer ya29.a0AXooCgvhdQMM44yXVXLbgR5-yiXXAUJFON70uDJhKiU_w7u51Avsb8Eg06Y4c8Q6cCDE4EUj9XR9XzoFBAwEavuNgnh1ta7IVs2UevMEmpkL8GsEa16sYtFBpEaeBlbvxLqhV3DTu2oaRhppPhD-pndIISDmvECeGfENaCgYKAQ8SARASFQHGX2Mi-pMV1O4GgVXY7XqYQ5xYQg0171"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"emails\":[\"arulkumar@amwhiz.com\"],\n    \"owner_email\":\"nagaraj@amwhiz.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/user/send-invite?userId=im9m4ajM3QTnVAbz7kBIuTxiZmA2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"send-invite"
+							],
+							"query": [
+								{
+									"key": "userId",
+									"value": "im9m4ajM3QTnVAbz7kBIuTxiZmA2"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "success response",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer ya29.a0AXooCgvhdQMM44yXVXLbgR5-yiXXAUJFON70uDJhKiU_w7u51Avsb8Eg06Y4c8Q6cCDE4EUj9XR9XzoFBAwEavuNgnh1ta7IVs2UevMEmpkL8GsEa16sYtFBpEaeBlbvxLqhV3DTu2oaRhppPhD-pndIISDmvECeGfENaCgYKAQ8SARASFQHGX2Mi-pMV1O4GgVXY7XqYQ5xYQg0171"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"emails\":[\"arulkumar@amwhiz.com\"],\n    \"owner_email\":\"nagaraj@amwhiz.com\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/user/send-invite?userId=im9m4ajM3QTnVAbz7kBIuTxiZmA2",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"user",
+										"send-invite"
+									],
+									"query": [
+										{
+											"key": "userId",
+											"value": "im9m4ajM3QTnVAbz7kBIuTxiZmA2"
+										}
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "33"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"21-WIlQc8KYSASq2aYr1U4JaTovtuE\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 24 Jun 2024 14:55:47 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": \"mail sent successfully\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "cronofy-calendars",
+			"item": [
+				{
+					"name": "cronofy/calendars",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer ya29.a0AXooCgurEwOUWEtP2vyib7NyLRHa-bJnTmaKHEdz90v2MI3YEA-fLutuIXqP6sYgsRrTq0P-y5DPIjlG1xMJ4Z3fXpInPZjgQZEDUyiRvLoHndC4eBDMMjE28PASLYJYkDKHI6ODzcPrFQQV_VgJuGpv29nEnBJXG5x-aCgYKAYASARMSFQHGX2MiWJYhPBYrCTg22n9Gx5kC5g0171"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/cronofy/calendars?userId=im9m4ajM3QTnVAbz7kBIuTxiZmA2&appName=google",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"cronofy",
+								"calendars"
+							],
+							"query": [
+								{
+									"key": "userId",
+									"value": "im9m4ajM3QTnVAbz7kBIuTxiZmA2"
+								},
+								{
+									"key": "appName",
+									"value": "google"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer ya29.a0AXooCgurEwOUWEtP2vyib7NyLRHa-bJnTmaKHEdz90v2MI3YEA-fLutuIXqP6sYgsRrTq0P-y5DPIjlG1xMJ4Z3fXpInPZjgQZEDUyiRvLoHndC4eBDMMjE28PASLYJYkDKHI6ODzcPrFQQV_VgJuGpv29nEnBJXG5x-aCgYKAYASARMSFQHGX2MiWJYhPBYrCTg22n9Gx5kC5g0171"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:3000/cronofy/calendars?userId=im9m4ajM3QTnVAbz7kBIuTxiZmA2&appName=google",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"cronofy",
+										"calendars"
+									],
+									"query": [
+										{
+											"key": "userId",
+											"value": "im9m4ajM3QTnVAbz7kBIuTxiZmA2"
+										},
+										{
+											"key": "appName",
+											"value": "google"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "787"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"313-kKe6pAGOEeZ7mARwVi41iAAMTUg\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 17 Jun 2024 19:58:28 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": [\n        {\n            \"provider_name\": \"google\",\n            \"profile_id\": \"pro_ZjjONjpEhgEfTFPk\",\n            \"profile_name\": \"nagaraj@amwhiz.com\",\n            \"calendar_id\": \"cal_ZjjONjpEhgEfTFPk_6genJPlwfCjw4CQvDbAuog\",\n            \"calendar_name\": \"nagaraj@amwhiz.com\",\n            \"calendar_readonly\": false,\n            \"calendar_deleted\": false,\n            \"calendar_primary\": true,\n            \"calendar_integrated_conferencing_available\": true,\n            \"calendar_attachments_available\": false,\n            \"permission_level\": \"sandbox\"\n        },\n        {\n            \"provider_name\": \"google\",\n            \"profile_id\": \"pro_Zinads74@VgeIeI1\",\n            \"profile_name\": \"npnagu50@gmail.com\",\n            \"calendar_id\": \"cal_Zinads74@VgeIeI1_B6-oIZyDmDk-yawRKySezA\",\n            \"calendar_name\": \"npnagu50@gmail.com\",\n            \"calendar_readonly\": false,\n            \"calendar_deleted\": false,\n            \"calendar_primary\": true,\n            \"calendar_integrated_conferencing_available\": true,\n            \"calendar_attachments_available\": true,\n            \"permission_level\": \"sandbox\"\n        }\n    ]\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "get-forms",
+			"item": [
+				{
+					"name": "forms",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer ya29.a0AfB_byB7Wz_W3SKnzeAn2ffWrtP3sUAyUpAVbO_s_-0tOpbRkyr5BZUHJ0bNy6EYQ4WkUEj9X5h8UGmHUvcjrdie8luelDUkx1-BUiOnxWe9QsTb32ALAnjK4gcEXZUuzBScQD5eH0ZoTMZ1uG8oQzg9X-lKNzxSMhoaCgYKAbMSARASFQHGX2Mi8h8A_cp1uWFmN5bBCuEY0g0170"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/forms?appName=hubspot&userId=im9m4ajM3QTnVAbz7kBIuTxiZmA2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"forms"
+							],
+							"query": [
+								{
+									"key": "appName",
+									"value": "hubspot"
+								},
+								{
+									"key": "userId",
+									"value": "im9m4ajM3QTnVAbz7kBIuTxiZmA2"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer ya29.a0AfB_byB7Wz_W3SKnzeAn2ffWrtP3sUAyUpAVbO_s_-0tOpbRkyr5BZUHJ0bNy6EYQ4WkUEj9X5h8UGmHUvcjrdie8luelDUkx1-BUiOnxWe9QsTb32ALAnjK4gcEXZUuzBScQD5eH0ZoTMZ1uG8oQzg9X-lKNzxSMhoaCgYKAbMSARASFQHGX2Mi8h8A_cp1uWFmN5bBCuEY0g0170"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:3000/forms?appName=hubspot&userId=im9m4ajM3QTnVAbz7kBIuTxiZmA2",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"forms"
+									],
+									"query": [
+										{
+											"key": "appName",
+											"value": "hubspot"
+										},
+										{
+											"key": "userId",
+											"value": "im9m4ajM3QTnVAbz7kBIuTxiZmA2"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "5766"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1686-pmHfQkTNRRipU5b9oQe3N2iqpeE\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 18 Jun 2024 06:14:05 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"results\": [\n            {\n                \"formType\": \"hubspot\",\n                \"id\": \"3e84eb54-de9a-478d-8a79-847d74ef1245\",\n                \"name\": \"New form (June 6, 2024 1:17:14\\u202fAM EDT)\",\n                \"createdAt\": \"2024-06-06T05:17:14.662Z\",\n                \"updatedAt\": \"2024-06-06T06:03:02.574Z\",\n                \"archived\": false,\n                \"fieldGroups\": [\n                    {\n                        \"groupType\": \"default_group\",\n                        \"richTextType\": \"text\",\n                        \"fields\": [\n                            {\n                                \"fieldType\": \"single_line_text\",\n                                \"objectTypeId\": \"0-1\",\n                                \"name\": \"lastname\",\n                                \"label\": \"Last name\",\n                                \"required\": false,\n                                \"hidden\": false\n                            }\n                        ]\n                    },\n                    {\n                        \"groupType\": \"default_group\",\n                        \"richTextType\": \"text\",\n                        \"fields\": [\n                            {\n                                \"fieldType\": \"single_line_text\",\n                                \"objectTypeId\": \"0-1\",\n                                \"name\": \"firstname\",\n                                \"label\": \"First name\",\n                                \"required\": false,\n                                \"hidden\": false\n                            }\n                        ]\n                    },\n                    {\n                        \"groupType\": \"default_group\",\n                        \"richTextType\": \"text\",\n                        \"fields\": [\n                            {\n                                \"fieldType\": \"email\",\n                                \"objectTypeId\": \"0-1\",\n                                \"name\": \"email\",\n                                \"label\": \"Email\",\n                                \"required\": true,\n                                \"hidden\": false,\n                                \"validation\": {}\n                            }\n                        ]\n                    },\n                    {\n                        \"groupType\": \"default_group\",\n                        \"richTextType\": \"text\",\n                        \"fields\": [\n                            {\n                                \"fieldType\": \"phone\",\n                                \"objectTypeId\": \"0-1\",\n                                \"name\": \"phone\",\n                                \"label\": \"Phone number\",\n                                \"required\": false,\n                                \"hidden\": false,\n                                \"validation\": {\n                                    \"minAllowedDigits\": 7,\n                                    \"maxAllowedDigits\": 20\n                                },\n                                \"useCountryCodeSelect\": false\n                            }\n                        ]\n                    },\n                    {\n                        \"groupType\": \"default_group\",\n                        \"richTextType\": \"text\",\n                        \"fields\": [\n                            {\n                                \"fieldType\": \"single_line_text\",\n                                \"objectTypeId\": \"0-1\",\n                                \"name\": \"company\",\n                                \"label\": \"Company name\",\n                                \"required\": false,\n                                \"hidden\": false\n                            }\n                        ]\n                    }\n                ],\n                \"configuration\": {\n                    \"createNewContactForNewEmail\": false,\n                    \"editable\": true,\n                    \"allowLinkToResetKnownValues\": false,\n                    \"lifecycleStages\": [],\n                    \"postSubmitAction\": {\n                        \"type\": \"thank_you\",\n                        \"value\": \"Thanks for submitting the form.\"\n                    },\n                    \"language\": \"en\",\n                    \"prePopulateKnownValues\": true,\n                    \"cloneable\": true,\n                    \"notifyContactOwner\": false,\n                    \"recaptchaEnabled\": false,\n                    \"archivable\": true,\n                    \"notifyRecipients\": [\n                        \"60026045\"\n                    ]\n                },\n                \"displayOptions\": {\n                    \"renderRawHtml\": false,\n                    \"cssClass\": \"hs-form stacked\",\n                    \"theme\": \"default_style\",\n                    \"submitButtonText\": \"Submit\",\n                    \"style\": {\n                        \"labelTextSize\": \"13px\",\n                        \"legalConsentTextColor\": \"#33475B\",\n                        \"fontFamily\": \"arial, helvetica, sans-serif\",\n                        \"legalConsentTextSize\": \"14px\",\n                        \"backgroundWidth\": \"100%\",\n                        \"helpTextSize\": \"11px\",\n                        \"submitFontColor\": \"#FFFFFF\",\n                        \"labelTextColor\": \"#212D3A\",\n                        \"submitAlignment\": \"left\",\n                        \"submitSize\": \"12px\",\n                        \"helpTextColor\": \"#516383DE\",\n                        \"submitColor\": \"#FF7A59\"\n                    }\n                },\n                \"legalConsentOptions\": {\n                    \"type\": \"none\"\n                }\n            },\n            {\n                \"formType\": \"hubspot\",\n                \"id\": \"2808b6b8-0a8b-44d5-b6f6-7641302ef38e\",\n                \"name\": \"New form (May 14, 2024 2:10:29 AM EDT)\",\n                \"createdAt\": \"2024-05-14T06:10:29.420Z\",\n                \"updatedAt\": \"2024-05-31T14:08:39.793Z\",\n                \"archived\": false,\n                \"fieldGroups\": [\n                    {\n                        \"groupType\": \"default_group\",\n                        \"richTextType\": \"text\",\n                        \"fields\": [\n                            {\n                                \"fieldType\": \"email\",\n                                \"objectTypeId\": \"0-1\",\n                                \"name\": \"email\",\n                                \"label\": \"Email\",\n                                \"required\": true,\n                                \"hidden\": false,\n                                \"validation\": {}\n                            }\n                        ]\n                    },\n                    {\n                        \"groupType\": \"default_group\",\n                        \"richTextType\": \"text\",\n                        \"fields\": [\n                            {\n                                \"fieldType\": \"single_line_text\",\n                                \"objectTypeId\": \"0-1\",\n                                \"name\": \"firstname\",\n                                \"label\": \"First name\",\n                                \"required\": false,\n                                \"hidden\": false\n                            }\n                        ]\n                    },\n                    {\n                        \"groupType\": \"default_group\",\n                        \"richTextType\": \"text\",\n                        \"fields\": [\n                            {\n                                \"fieldType\": \"phone\",\n                                \"objectTypeId\": \"0-1\",\n                                \"name\": \"phone\",\n                                \"label\": \"Phone number\",\n                                \"required\": false,\n                                \"hidden\": false,\n                                \"validation\": {\n                                    \"minAllowedDigits\": 7,\n                                    \"maxAllowedDigits\": 20\n                                },\n                                \"useCountryCodeSelect\": false\n                            }\n                        ]\n                    }\n                ],\n                \"configuration\": {\n                    \"createNewContactForNewEmail\": false,\n                    \"editable\": true,\n                    \"allowLinkToResetKnownValues\": false,\n                    \"lifecycleStages\": [],\n                    \"postSubmitAction\": {\n                        \"type\": \"thank_you\",\n                        \"value\": \"Thanks for submitting the form.\"\n                    },\n                    \"language\": \"en\",\n                    \"prePopulateKnownValues\": true,\n                    \"cloneable\": true,\n                    \"notifyContactOwner\": false,\n                    \"recaptchaEnabled\": false,\n                    \"archivable\": true,\n                    \"notifyRecipients\": [\n                        \"63503080\"\n                    ]\n                },\n                \"displayOptions\": {\n                    \"renderRawHtml\": false,\n                    \"cssClass\": \"hs-form stacked\",\n                    \"theme\": \"default_style\",\n                    \"submitButtonText\": \"Submit\",\n                    \"style\": {\n                        \"labelTextSize\": \"13px\",\n                        \"legalConsentTextColor\": \"#33475B\",\n                        \"fontFamily\": \"arial, helvetica, sans-serif\",\n                        \"legalConsentTextSize\": \"14px\",\n                        \"backgroundWidth\": \"100%\",\n                        \"helpTextSize\": \"11px\",\n                        \"submitFontColor\": \"#FFFFFF\",\n                        \"labelTextColor\": \"#212D3A\",\n                        \"submitAlignment\": \"left\",\n                        \"submitSize\": \"12px\",\n                        \"helpTextColor\": \"#516383DE\",\n                        \"submitColor\": \"#FF7A59\"\n                    }\n                },\n                \"legalConsentOptions\": {\n                    \"type\": \"none\"\n                }\n            },\n            {\n                \"formType\": \"hubspot\",\n                \"id\": \"c38d98aa-799b-4846-86ba-cbcf0537c5d4\",\n                \"name\": \"Test Form\",\n                \"createdAt\": \"2024-05-14T05:27:13.034Z\",\n                \"updatedAt\": \"2024-06-06T16:39:15.515Z\",\n                \"archived\": false,\n                \"fieldGroups\": [\n                    {\n                        \"groupType\": \"default_group\",\n                        \"richTextType\": \"text\",\n                        \"fields\": [\n                            {\n                                \"fieldType\": \"email\",\n                                \"objectTypeId\": \"0-1\",\n                                \"name\": \"email\",\n                                \"label\": \"Email\",\n                                \"required\": true,\n                                \"hidden\": false,\n                                \"validation\": {}\n                            }\n                        ]\n                    },\n                    {\n                        \"groupType\": \"default_group\",\n                        \"richTextType\": \"text\",\n                        \"fields\": [\n                            {\n                                \"fieldType\": \"single_line_text\",\n                                \"objectTypeId\": \"0-1\",\n                                \"name\": \"firstname\",\n                                \"label\": \"First name\",\n                                \"required\": false,\n                                \"hidden\": false\n                            }\n                        ]\n                    },\n                    {\n                        \"groupType\": \"default_group\",\n                        \"richTextType\": \"text\",\n                        \"fields\": [\n                            {\n                                \"fieldType\": \"single_line_text\",\n                                \"objectTypeId\": \"0-1\",\n                                \"name\": \"lastname\",\n                                \"label\": \"Last name\",\n                                \"required\": false,\n                                \"hidden\": false\n                            }\n                        ]\n                    },\n                    {\n                        \"groupType\": \"default_group\",\n                        \"richTextType\": \"text\",\n                        \"fields\": [\n                            {\n                                \"fieldType\": \"phone\",\n                                \"objectTypeId\": \"0-1\",\n                                \"name\": \"phone\",\n                                \"label\": \"Phone number\",\n                                \"required\": false,\n                                \"hidden\": false,\n                                \"validation\": {\n                                    \"minAllowedDigits\": 7,\n                                    \"maxAllowedDigits\": 20\n                                },\n                                \"useCountryCodeSelect\": false\n                            }\n                        ]\n                    }\n                ],\n                \"configuration\": {\n                    \"createNewContactForNewEmail\": false,\n                    \"editable\": true,\n                    \"allowLinkToResetKnownValues\": false,\n                    \"lifecycleStages\": [],\n                    \"postSubmitAction\": {\n                        \"type\": \"thank_you\",\n                        \"value\": \"Thanks for submitting the form.\"\n                    },\n                    \"language\": \"en\",\n                    \"prePopulateKnownValues\": true,\n                    \"cloneable\": true,\n                    \"notifyContactOwner\": false,\n                    \"recaptchaEnabled\": false,\n                    \"archivable\": true,\n                    \"notifyRecipients\": [\n                        \"62990642\"\n                    ]\n                },\n                \"displayOptions\": {\n                    \"renderRawHtml\": false,\n                    \"cssClass\": \"hs-form stacked\",\n                    \"theme\": \"default_style\",\n                    \"submitButtonText\": \"Submit\",\n                    \"style\": {\n                        \"labelTextSize\": \"13px\",\n                        \"legalConsentTextColor\": \"#33475B\",\n                        \"fontFamily\": \"arial, helvetica, sans-serif\",\n                        \"legalConsentTextSize\": \"14px\",\n                        \"backgroundWidth\": \"100%\",\n                        \"helpTextSize\": \"11px\",\n                        \"submitFontColor\": \"#FFFFFF\",\n                        \"labelTextColor\": \"#212D3A\",\n                        \"submitAlignment\": \"left\",\n                        \"submitSize\": \"12px\",\n                        \"helpTextColor\": \"#516383DE\",\n                        \"submitColor\": \"#FF7A59\"\n                    }\n                },\n                \"legalConsentOptions\": {\n                    \"type\": \"none\"\n                }\n            }\n        ]\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "update-app-details",
+			"item": [
+				{
+					"name": "app/configuration",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer ya29.a0Ad52N384Ku3B0HTeK0fwviTDRWhxktaIZL5IN95DhVA9803gvIk2HGld07Hve-2tE4KLKFeSQJd9apw5li-WWRiVQmfjPczRj_htX54Y0mz6YUL-HYwbcOlTPTE-91jUgKEXFs1aCU0o6a55sKjkaAtEhGDjHWAUPOaiaCgYKAW8SARASFQHGX2MipBcpEzq3NU_p9NBGVdNqbQ0171"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"sales_people_emails\":[\"npnagu50@gmail.com\"]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/app/configuration?userId=im9m4ajM3QTnVAbz7kBIuTxiZmA2&appName=hubspot",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"app",
+								"configuration"
+							],
+							"query": [
+								{
+									"key": "userId",
+									"value": "im9m4ajM3QTnVAbz7kBIuTxiZmA2"
+								},
+								{
+									"key": "appName",
+									"value": "hubspot"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "success response",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer ya29.a0Ad52N384Ku3B0HTeK0fwviTDRWhxktaIZL5IN95DhVA9803gvIk2HGld07Hve-2tE4KLKFeSQJd9apw5li-WWRiVQmfjPczRj_htX54Y0mz6YUL-HYwbcOlTPTE-91jUgKEXFs1aCU0o6a55sKjkaAtEhGDjHWAUPOaiaCgYKAW8SARASFQHGX2MipBcpEzq3NU_p9NBGVdNqbQ0171"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"sales_people_emails\":[\"npnagu50@gmail.com\"]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/app/configuration?userId=im9m4ajM3QTnVAbz7kBIuTxiZmA2&appName=hubspot",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"app",
+										"configuration"
+									],
+									"query": [
+										{
+											"key": "userId",
+											"value": "im9m4ajM3QTnVAbz7kBIuTxiZmA2"
+										},
+										{
+											"key": "appName",
+											"value": "hubspot"
+										}
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "145"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"91-gZWSXP5teG/ydEUCwCG5xY/eGrs\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 18 Jun 2024 06:50:25 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"$metadata\": {\n            \"httpStatusCode\": 200,\n            \"requestId\": \"BD3DI7A9H5KUU2QPP1U0EE4JQJVV4KQNSO5AEMVJF66Q9ASUAAJG\",\n            \"attempts\": 1,\n            \"totalRetryDelay\": 0\n        }\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "EVENTS",
+			"item": [
+				{
+					"name": "cerate/events",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Team Meeting\",\n    \"type\": \"Virtual\",\n    \"duration\": \"1 hour\",\n    \"location\": {\n        \"provider\": \"Zoom\",\n        \"meeting_url\": \"https://example.zoom.us/team-meeting\"\n    },\n    \"team_members\": [\n        {\n            \"name\": \"John Doe\",\n            \"hermetic_id\": \"JD123\",\n            \"email\": \"nagaraj@amwhiz.com\"\n        },\n        {\n            \"name\": \"Jane Smith\",\n            \"hermetic_id\": \"JS456\",\n            \"email\": \"nagaraj@amwhiz.com\"\n        },\n        {\n            \"name\": \"Alice Johnson\",\n            \"hermetic_id\": \"AJ789\",\n            \"email\": \"nagaraj@amwhiz.com\"\n        }\n    ],\n    \"form\": [\n        {\n            \"provider\": \"hubspot\",\n            \"forms\": [\n                {\n                    \"name\": \"Post-meeting Feedback\",\n                    \"id\": \"form123\"\n                }\n            ]\n        },\n         {\n            \"provider\": \"typeform\",\n            \"forms\": [\n                {\n                    \"name\": \"Post-meeting Feedback\",\n                    \"id\": \"form123\"\n                }\n            ]\n        }\n    ],\n    \"title\": \"Weekly Team Meeting\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/cronofy/event?userId=im9m4ajM3QTnVAbz7kBIuTxiZmA2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"cronofy",
+								"event"
+							],
+							"query": [
+								{
+									"key": "userId",
+									"value": "im9m4ajM3QTnVAbz7kBIuTxiZmA2"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "success response",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Team Meeting\",\n    \"type\": \"Virtual\",\n    \"duration\": \"1 hour\",\n    \"location\": {\n        \"provider\": \"Zoom\",\n        \"meeting_url\": \"https://example.zoom.us/team-meeting\"\n    },\n    \"team_members\": [\n        {\n            \"name\": \"John Doe\",\n            \"hermetic_id\": \"JD123\",\n            \"email\": \"nagaraj@amwhiz.com\"\n        },\n        {\n            \"name\": \"Jane Smith\",\n            \"hermetic_id\": \"JS456\",\n            \"email\": \"nagaraj@amwhiz.com\"\n        },\n        {\n            \"name\": \"Alice Johnson\",\n            \"hermetic_id\": \"AJ789\",\n            \"email\": \"nagaraj@amwhiz.com\"\n        }\n    ],\n    \"form\": [\n        {\n            \"provider\": \"hubspot\",\n            \"forms\": [\n                {\n                    \"name\": \"Post-meeting Feedback\",\n                    \"id\": \"form123\"\n                }\n            ]\n        },\n         {\n            \"provider\": \"typeform\",\n            \"forms\": [\n                {\n                    \"name\": \"Post-meeting Feedback\",\n                    \"id\": \"form123\"\n                }\n            ]\n        }\n    ],\n    \"title\": \"Weekly Team Meeting\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/cronofy/event?userId=im9m4ajM3QTnVAbz7kBIuTxiZmA2",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"cronofy",
+										"event"
+									],
+									"query": [
+										{
+											"key": "userId",
+											"value": "im9m4ajM3QTnVAbz7kBIuTxiZmA2"
+										}
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "145"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"91-Wrejhs2NfCPIIfZY9N8saOfhrys\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 24 Jun 2024 15:00:24 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"$metadata\": {\n            \"httpStatusCode\": 200,\n            \"requestId\": \"M1QI7OEKGH7DEKJ612SPS14KEBVV4KQNSO5AEMVJF66Q9ASUAAJG\",\n            \"attempts\": 1,\n            \"totalRetryDelay\": 0\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "update/events",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Heroestic Meeting\",\n    \"type\": \"Virtual\",\n    \"duration\": \"1 hour\",\n    \"location\": {\n        \"provider\": \"Zoom\",\n        \"meeting_url\": \"https://example.zoom.us/team-meeting\"\n    },\n    \"team_members\": [\n        {\n            \"name\": \"John Doe\",\n            \"hermetic_id\": \"JD123\",\n            \"email\": \"nagaraj@amwhiz.com\"\n        },\n        {\n            \"name\": \"Jane Smith\",\n            \"hermetic_id\": \"JS456\",\n            \"email\": \"nagaraj@amwhiz.com\"\n        },\n        {\n            \"name\": \"Alice Johnson\",\n            \"hermetic_id\": \"AJ789\",\n            \"email\": \"nagaraj@amwhiz.com\"\n        }\n    ],\n    \"form\": [\n        {\n            \"provider\": \"Google Forms\",\n            \"forms\": [\n                {\n                    \"name\": \"Post-meeting Feedback\",\n                    \"id\": \"form123\"\n                }\n            ]\n        }\n    ],\n    \"title\": \"Weekly Team Meeting\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/cronofy/event?userId=im9m4ajM3QTnVAbz7kBIuTxiZmA2&eventId=09c42799-5566-461d-b542-0c8f314ba57c",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"cronofy",
+								"event"
+							],
+							"query": [
+								{
+									"key": "userId",
+									"value": "im9m4ajM3QTnVAbz7kBIuTxiZmA2"
+								},
+								{
+									"key": "eventId",
+									"value": "09c42799-5566-461d-b542-0c8f314ba57c"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Heroestic Meeting\",\n    \"type\": \"Virtual\",\n    \"duration\": \"1 hour\",\n    \"location\": {\n        \"provider\": \"Zoom\",\n        \"meeting_url\": \"https://example.zoom.us/team-meeting\"\n    },\n    \"team_members\": [\n        {\n            \"name\": \"John Doe\",\n            \"hermetic_id\": \"JD123\",\n            \"email\": \"nagaraj@amwhiz.com\"\n        },\n        {\n            \"name\": \"Jane Smith\",\n            \"hermetic_id\": \"JS456\",\n            \"email\": \"nagaraj@amwhiz.com\"\n        },\n        {\n            \"name\": \"Alice Johnson\",\n            \"hermetic_id\": \"AJ789\",\n            \"email\": \"nagaraj@amwhiz.com\"\n        }\n    ],\n    \"form\": [\n        {\n            \"provider\": \"Google Forms\",\n            \"forms\": [\n                {\n                    \"name\": \"Post-meeting Feedback\",\n                    \"id\": \"form123\"\n                }\n            ]\n        }\n    ],\n    \"title\": \"Weekly Team Meeting\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/cronofy/event?userId=im9m4ajM3QTnVAbz7kBIuTxiZmA2&eventId=09c42799-5566-461d-b542-0c8f314ba57c",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"cronofy",
+										"event"
+									],
+									"query": [
+										{
+											"key": "userId",
+											"value": "im9m4ajM3QTnVAbz7kBIuTxiZmA2"
+										},
+										{
+											"key": "eventId",
+											"value": "09c42799-5566-461d-b542-0c8f314ba57c"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "145"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"91-SChKUKmBmnQQyKpAih9E51z/ubo\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 18 Jun 2024 10:02:59 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"$metadata\": {\n            \"httpStatusCode\": 200,\n            \"requestId\": \"F58L9N7E4ESL1K0RL1PO2NFS7BVV4KQNSO5AEMVJF66Q9ASUAAJG\",\n            \"attempts\": 1,\n            \"totalRetryDelay\": 0\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "get/events",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/cronofy/calendar-events?userId=im9m4ajM3QTnVAbz7kBIuTxiZmA2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"cronofy",
+								"calendar-events"
+							],
+							"query": [
+								{
+									"key": "userId",
+									"value": "im9m4ajM3QTnVAbz7kBIuTxiZmA2"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/cronofy/calendar-events?userId=im9m4ajM3QTnVAbz7kBIuTxiZmA2",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"cronofy",
+										"calendar-events"
+									],
+									"query": [
+										{
+											"key": "userId",
+											"value": "im9m4ajM3QTnVAbz7kBIuTxiZmA2"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "705"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2c1-GhVsXjlSJUEL8qqsy020TWaBuTc\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 18 Jun 2024 10:08:45 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": [\n        {\n            \"location\": {\n                \"provider\": \"Zoom\",\n                \"meeting_url\": \"https://example.zoom.us/team-meeting\"\n            },\n            \"modified\": \"2024-06-18T10:02:58.222Z\",\n            \"sk\": \"EVENT#09c42799-5566-461d-b542-0c8f314ba57c\",\n            \"team_members\": [\n                {\n                    \"name\": \"John Doe\",\n                    \"hermetic_id\": \"JD123\",\n                    \"email\": \"nagaraj@amwhiz.com\"\n                },\n                {\n                    \"name\": \"Jane Smith\",\n                    \"hermetic_id\": \"JS456\",\n                    \"email\": \"nagaraj@amwhiz.com\"\n                },\n                {\n                    \"name\": \"Alice Johnson\",\n                    \"hermetic_id\": \"AJ789\",\n                    \"email\": \"nagaraj@amwhiz.com\"\n                }\n            ],\n            \"form\": [\n                {\n                    \"provider\": \"Google Forms\",\n                    \"forms\": [\n                        {\n                            \"name\": \"Post-meeting Feedback\",\n                            \"id\": \"form123\"\n                        }\n                    ]\n                }\n            ],\n            \"id\": \"im9m4ajM3QTnVAbz7kBIuTxiZmA2\",\n            \"entity\": \"dev-events\",\n            \"duration\": \"1 hour\",\n            \"name\": \"Heroestic Meeting\",\n            \"created\": \"2024-06-18T10:02:58.221Z\",\n            \"type\": \"Virtual\",\n            \"title\": \"Weekly Team Meeting\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "get/single/event",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/app/event?userId=im9m4ajM3QTnVAbz7kBIuTxiZmA2&eventId=09c42799-5566-461d-b542-0c8f314ba57c",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"app",
+								"event"
+							],
+							"query": [
+								{
+									"key": "userId",
+									"value": "im9m4ajM3QTnVAbz7kBIuTxiZmA2"
+								},
+								{
+									"key": "eventId",
+									"value": "09c42799-5566-461d-b542-0c8f314ba57c"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "success response",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/app/event?userId=im9m4ajM3QTnVAbz7kBIuTxiZmA2&eventId=09c42799-5566-461d-b542-0c8f314ba57c",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"app",
+										"event"
+									],
+									"query": [
+										{
+											"key": "userId",
+											"value": "im9m4ajM3QTnVAbz7kBIuTxiZmA2"
+										},
+										{
+											"key": "eventId",
+											"value": "09c42799-5566-461d-b542-0c8f314ba57c"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "703"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2bf-09CfN5Y8TY83nZ81mDPqbgLh79I\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 18 Jun 2024 10:12:59 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"location\": {\n            \"provider\": \"Zoom\",\n            \"meeting_url\": \"https://example.zoom.us/team-meeting\"\n        },\n        \"modified\": \"2024-06-18T10:02:58.222Z\",\n        \"sk\": \"EVENT#09c42799-5566-461d-b542-0c8f314ba57c\",\n        \"team_members\": [\n            {\n                \"name\": \"John Doe\",\n                \"hermetic_id\": \"JD123\",\n                \"email\": \"nagaraj@amwhiz.com\"\n            },\n            {\n                \"name\": \"Jane Smith\",\n                \"hermetic_id\": \"JS456\",\n                \"email\": \"nagaraj@amwhiz.com\"\n            },\n            {\n                \"name\": \"Alice Johnson\",\n                \"hermetic_id\": \"AJ789\",\n                \"email\": \"nagaraj@amwhiz.com\"\n            }\n        ],\n        \"form\": [\n            {\n                \"provider\": \"Google Forms\",\n                \"forms\": [\n                    {\n                        \"name\": \"Post-meeting Feedback\",\n                        \"id\": \"form123\"\n                    }\n                ]\n            }\n        ],\n        \"id\": \"im9m4ajM3QTnVAbz7kBIuTxiZmA2\",\n        \"entity\": \"dev-events\",\n        \"duration\": \"1 hour\",\n        \"name\": \"Heroestic Meeting\",\n        \"created\": \"2024-06-18T10:02:58.221Z\",\n        \"type\": \"Virtual\",\n        \"title\": \"Weekly Team Meeting\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "delete/event",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/cronofy/event?userId=im9m4ajM3QTnVAbz7kBIuTxiZmA2&eventId=09c42799-5566-461d-b542-0c8f314ba57c",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"cronofy",
+								"event"
+							],
+							"query": [
+								{
+									"key": "userId",
+									"value": "im9m4ajM3QTnVAbz7kBIuTxiZmA2"
+								},
+								{
+									"key": "eventId",
+									"value": "09c42799-5566-461d-b542-0c8f314ba57c"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:3000/cronofy/event?userId=im9m4ajM3QTnVAbz7kBIuTxiZmA2&eventId=09c42799-5566-461d-b542-0c8f314ba57c",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"cronofy",
+										"event"
+									],
+									"query": [
+										{
+											"key": "userId",
+											"value": "im9m4ajM3QTnVAbz7kBIuTxiZmA2"
+										},
+										{
+											"key": "eventId",
+											"value": "09c42799-5566-461d-b542-0c8f314ba57c"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "145"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"91-yM6T/epmZvtKokqJqi7ASXcIvbQ\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 18 Jun 2024 10:20:07 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"$metadata\": {\n            \"httpStatusCode\": 200,\n            \"requestId\": \"AGDGFDSGJUOS9T773EMU7C3KUBVV4KQNSO5AEMVJF66Q9ASUAAJG\",\n            \"attempts\": 1,\n            \"totalRetryDelay\": 0\n        }\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "CLIENT-WEBHOOK",
+			"item": [
+				{
+					"name": "pause ai",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer amwiz@eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsb2NhbElkIjoiSzhLZUdEdU90V01WMERNNUJld2JCMlFtV2NMMiIsImVtYWlsIjoiYXJ1bGt1bWFyQGFtd2hpei5jb20iLCJkaXNwbGF5TmFtZSI6IkFydWxrdW1hciBUaGl5YWdhcmFqYW4iLCJwaG90b1VybCI6Imh0dHBzOi8vbGgzLmdvb2dsZXVzZXJjb250ZW50LmNvbS9hL0FDZzhvY0t3eU1uZjUySzJsWWlmM3JCVkNhM0kzdzVleXFMRU1MbEQ3LS1WUmtXRT1zOTYtYyIsImVtYWlsVmVyaWZpZWQiOnRydWUsInByb3ZpZGVyVXNlckluZm8iOlt7InByb3ZpZGVySWQiOiJnb29nbGUuY29tIiwiZGlzcGxheU5hbWUiOiJBcnVsa3VtYXIgVGhpeWFnYXJhamFuIiwicGhvdG9VcmwiOiJodHRwczovL2xoMy5nb29nbGV1c2VyY29udGVudC5jb20vYS9BQ2c4b2NLd3lNbmY1MksybFlpZjNyQlZDYTNJM3c1ZXlxTEVNTGxENy0tVlJrV0U9czk2LWMiLCJmZWRlcmF0ZWRJZCI6Iks4S2VHRHVPdFdNVjBETTVCZXdiQjJRbVdjTDIiLCJlbWFpbCI6ImFydWxrdW1hckBhbXdoaXouY29tIiwicmF3SWQiOiJLOEtlR0R1T3RXTVYwRE01QmV3YkIyUW1XY0wyIn1dLCJ2YWxpZFNpbmNlIjoiV2VkLCAxNCBGZWIgMjAyNCAxMjo0Njo1NCBHTVQiLCJsYXN0TG9naW5BdCI6IlNhdCwgMTggTWF5IDIwMjQgMDk6NTg6MDIgR01UIiwiY3JlYXRlZEF0IjoiV2VkLCAxNCBGZWIgMjAyNCAxMjo0Njo1NCBHTVQiLCJsYXN0UmVmcmVzaEF0IjoiU2F0LCAxOCBNYXkgMjAyNCAwOTo1ODowMiBHTVQiLCJpYXQiOjE3MTYwMjY0MzQsImV4cCI6MTcxNjYzMTIzNH0.CkiiAxLrLl5q4wCusNjSlTeZ7Ahyq_3eql5IZQ99Z7s"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"set_ai\": false\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/pause-ai?userId=im9m4ajM3QTnVAbz7kBIuTxiZmA2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"pause-ai"
+							],
+							"query": [
+								{
+									"key": "userId",
+									"value": "im9m4ajM3QTnVAbz7kBIuTxiZmA2"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "success-dev",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer amwiz@eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsb2NhbElkIjoiSzhLZUdEdU90V01WMERNNUJld2JCMlFtV2NMMiIsImVtYWlsIjoiYXJ1bGt1bWFyQGFtd2hpei5jb20iLCJkaXNwbGF5TmFtZSI6IkFydWxrdW1hciBUaGl5YWdhcmFqYW4iLCJwaG90b1VybCI6Imh0dHBzOi8vbGgzLmdvb2dsZXVzZXJjb250ZW50LmNvbS9hL0FDZzhvY0t3eU1uZjUySzJsWWlmM3JCVkNhM0kzdzVleXFMRU1MbEQ3LS1WUmtXRT1zOTYtYyIsImVtYWlsVmVyaWZpZWQiOnRydWUsInByb3ZpZGVyVXNlckluZm8iOlt7InByb3ZpZGVySWQiOiJnb29nbGUuY29tIiwiZGlzcGxheU5hbWUiOiJBcnVsa3VtYXIgVGhpeWFnYXJhamFuIiwicGhvdG9VcmwiOiJodHRwczovL2xoMy5nb29nbGV1c2VyY29udGVudC5jb20vYS9BQ2c4b2NLd3lNbmY1MksybFlpZjNyQlZDYTNJM3c1ZXlxTEVNTGxENy0tVlJrV0U9czk2LWMiLCJmZWRlcmF0ZWRJZCI6Iks4S2VHRHVPdFdNVjBETTVCZXdiQjJRbVdjTDIiLCJlbWFpbCI6ImFydWxrdW1hckBhbXdoaXouY29tIiwicmF3SWQiOiJLOEtlR0R1T3RXTVYwRE01QmV3YkIyUW1XY0wyIn1dLCJ2YWxpZFNpbmNlIjoiV2VkLCAxNCBGZWIgMjAyNCAxMjo0Njo1NCBHTVQiLCJsYXN0TG9naW5BdCI6IlNhdCwgMTggTWF5IDIwMjQgMDk6NTg6MDIgR01UIiwiY3JlYXRlZEF0IjoiV2VkLCAxNCBGZWIgMjAyNCAxMjo0Njo1NCBHTVQiLCJsYXN0UmVmcmVzaEF0IjoiU2F0LCAxOCBNYXkgMjAyNCAwOTo1ODowMiBHTVQiLCJpYXQiOjE3MTYwMjY0MzQsImV4cCI6MTcxNjYzMTIzNH0.CkiiAxLrLl5q4wCusNjSlTeZ7Ahyq_3eql5IZQ99Z7s"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"set_ai\": false\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/pause-ai?userId=im9m4ajM3QTnVAbz7kBIuTxiZmA2",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"pause-ai"
+									],
+									"query": [
+										{
+											"key": "userId",
+											"value": "im9m4ajM3QTnVAbz7kBIuTxiZmA2"
+										}
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "40"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"28-PgQ7NcJXiv5IxTcmqUgqjO3dnm8\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 18 Jun 2024 14:11:41 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"status\": \"user not permitted\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "pause/lead/ai",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer amwiz@eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsb2NhbElkIjoiSzhLZUdEdU90V01WMERNNUJld2JCMlFtV2NMMiIsImVtYWlsIjoiYXJ1bGt1bWFyQGFtd2hpei5jb20iLCJkaXNwbGF5TmFtZSI6IkFydWxrdW1hciBUaGl5YWdhcmFqYW4iLCJwaG90b1VybCI6Imh0dHBzOi8vbGgzLmdvb2dsZXVzZXJjb250ZW50LmNvbS9hL0FDZzhvY0t3eU1uZjUySzJsWWlmM3JCVkNhM0kzdzVleXFMRU1MbEQ3LS1WUmtXRT1zOTYtYyIsImVtYWlsVmVyaWZpZWQiOnRydWUsInByb3ZpZGVyVXNlckluZm8iOlt7InByb3ZpZGVySWQiOiJnb29nbGUuY29tIiwiZGlzcGxheU5hbWUiOiJBcnVsa3VtYXIgVGhpeWFnYXJhamFuIiwicGhvdG9VcmwiOiJodHRwczovL2xoMy5nb29nbGV1c2VyY29udGVudC5jb20vYS9BQ2c4b2NLd3lNbmY1MksybFlpZjNyQlZDYTNJM3c1ZXlxTEVNTGxENy0tVlJrV0U9czk2LWMiLCJmZWRlcmF0ZWRJZCI6Iks4S2VHRHVPdFdNVjBETTVCZXdiQjJRbVdjTDIiLCJlbWFpbCI6ImFydWxrdW1hckBhbXdoaXouY29tIiwicmF3SWQiOiJLOEtlR0R1T3RXTVYwRE01QmV3YkIyUW1XY0wyIn1dLCJ2YWxpZFNpbmNlIjoiV2VkLCAxNCBGZWIgMjAyNCAxMjo0Njo1NCBHTVQiLCJsYXN0TG9naW5BdCI6Ik1vbiwgMjAgTWF5IDIwMjQgMDU6NDU6MTMgR01UIiwiY3JlYXRlZEF0IjoiV2VkLCAxNCBGZWIgMjAyNCAxMjo0Njo1NCBHTVQiLCJsYXN0UmVmcmVzaEF0IjoiTW9uLCAyMCBNYXkgMjAyNCAwNTo0NToxMyBHTVQiLCJpYXQiOjE3MTYxODQwMjQsImV4cCI6MTcxNjc4ODgyNH0.wuyHoiyubq7V5ZjCSvGGcUNI9R9vSUOEOuH2crnyDBA"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"set_ai\": false\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/lead/pause-ai?userId=K8KeGDuOtWMV0DM5BewbB2QmWcL2&leadId=315963ca6d10875ebac91b5126ddf0f2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"lead",
+								"pause-ai"
+							],
+							"query": [
+								{
+									"key": "userId",
+									"value": "K8KeGDuOtWMV0DM5BewbB2QmWcL2"
+								},
+								{
+									"key": "leadId",
+									"value": "315963ca6d10875ebac91b5126ddf0f2"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer amwiz@eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsb2NhbElkIjoiSzhLZUdEdU90V01WMERNNUJld2JCMlFtV2NMMiIsImVtYWlsIjoiYXJ1bGt1bWFyQGFtd2hpei5jb20iLCJkaXNwbGF5TmFtZSI6IkFydWxrdW1hciBUaGl5YWdhcmFqYW4iLCJwaG90b1VybCI6Imh0dHBzOi8vbGgzLmdvb2dsZXVzZXJjb250ZW50LmNvbS9hL0FDZzhvY0t3eU1uZjUySzJsWWlmM3JCVkNhM0kzdzVleXFMRU1MbEQ3LS1WUmtXRT1zOTYtYyIsImVtYWlsVmVyaWZpZWQiOnRydWUsInByb3ZpZGVyVXNlckluZm8iOlt7InByb3ZpZGVySWQiOiJnb29nbGUuY29tIiwiZGlzcGxheU5hbWUiOiJBcnVsa3VtYXIgVGhpeWFnYXJhamFuIiwicGhvdG9VcmwiOiJodHRwczovL2xoMy5nb29nbGV1c2VyY29udGVudC5jb20vYS9BQ2c4b2NLd3lNbmY1MksybFlpZjNyQlZDYTNJM3c1ZXlxTEVNTGxENy0tVlJrV0U9czk2LWMiLCJmZWRlcmF0ZWRJZCI6Iks4S2VHRHVPdFdNVjBETTVCZXdiQjJRbVdjTDIiLCJlbWFpbCI6ImFydWxrdW1hckBhbXdoaXouY29tIiwicmF3SWQiOiJLOEtlR0R1T3RXTVYwRE01QmV3YkIyUW1XY0wyIn1dLCJ2YWxpZFNpbmNlIjoiV2VkLCAxNCBGZWIgMjAyNCAxMjo0Njo1NCBHTVQiLCJsYXN0TG9naW5BdCI6Ik1vbiwgMjAgTWF5IDIwMjQgMDU6NDU6MTMgR01UIiwiY3JlYXRlZEF0IjoiV2VkLCAxNCBGZWIgMjAyNCAxMjo0Njo1NCBHTVQiLCJsYXN0UmVmcmVzaEF0IjoiTW9uLCAyMCBNYXkgMjAyNCAwNTo0NToxMyBHTVQiLCJpYXQiOjE3MTYxODQwMjQsImV4cCI6MTcxNjc4ODgyNH0.wuyHoiyubq7V5ZjCSvGGcUNI9R9vSUOEOuH2crnyDBA"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"set_ai\": false\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/lead/pause-ai?userId=K8KeGDuOtWMV0DM5BewbB2QmWcL2&leadId=315963ca6d10875ebac91b5126ddf0f2",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"lead",
+										"pause-ai"
+									],
+									"query": [
+										{
+											"key": "userId",
+											"value": "K8KeGDuOtWMV0DM5BewbB2QmWcL2"
+										},
+										{
+											"key": "leadId",
+											"value": "315963ca6d10875ebac91b5126ddf0f2"
+										}
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "36"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"24-elVwd4ncIgdmWt7vbL/PNd0TgPc\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 18 Jun 2024 14:19:07 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"status\": \"lead not found\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "send lead message",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer amwiz@eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsb2NhbElkIjoiSzhLZUdEdU90V01WMERNNUJld2JCMlFtV2NMMiIsImVtYWlsIjoiYXJ1bGt1bWFyQGFtd2hpei5jb20iLCJkaXNwbGF5TmFtZSI6IkFydWxrdW1hciBUaGl5YWdhcmFqYW4iLCJwaG90b1VybCI6Imh0dHBzOi8vbGgzLmdvb2dsZXVzZXJjb250ZW50LmNvbS9hL0FDZzhvY0t3eU1uZjUySzJsWWlmM3JCVkNhM0kzdzVleXFMRU1MbEQ3LS1WUmtXRT1zOTYtYyIsImVtYWlsVmVyaWZpZWQiOnRydWUsInByb3ZpZGVyVXNlckluZm8iOlt7InByb3ZpZGVySWQiOiJnb29nbGUuY29tIiwiZGlzcGxheU5hbWUiOiJBcnVsa3VtYXIgVGhpeWFnYXJhamFuIiwicGhvdG9VcmwiOiJodHRwczovL2xoMy5nb29nbGV1c2VyY29udGVudC5jb20vYS9BQ2c4b2NLd3lNbmY1MksybFlpZjNyQlZDYTNJM3c1ZXlxTEVNTGxENy0tVlJrV0U9czk2LWMiLCJmZWRlcmF0ZWRJZCI6Iks4S2VHRHVPdFdNVjBETTVCZXdiQjJRbVdjTDIiLCJlbWFpbCI6ImFydWxrdW1hckBhbXdoaXouY29tIiwicmF3SWQiOiJLOEtlR0R1T3RXTVYwRE01QmV3YkIyUW1XY0wyIn1dLCJ2YWxpZFNpbmNlIjoiV2VkLCAxNCBGZWIgMjAyNCAxMjo0Njo1NCBHTVQiLCJsYXN0TG9naW5BdCI6IlNhdCwgMTggTWF5IDIwMjQgMDk6NTg6MDIgR01UIiwiY3JlYXRlZEF0IjoiV2VkLCAxNCBGZWIgMjAyNCAxMjo0Njo1NCBHTVQiLCJsYXN0UmVmcmVzaEF0IjoiU2F0LCAxOCBNYXkgMjAyNCAwOTo1ODowMiBHTVQiLCJpYXQiOjE3MTYwMjY0MzQsImV4cCI6MTcxNjYzMTIzNH0.CkiiAxLrLl5q4wCusNjSlTeZ7Ahyq_3eql5IZQ99Z7s"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"message\":\"Hi Mia this is testing\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/lead/send-message?userId=K8KeGDuOtWMV0DM5BewbB2QmWcL2&leadId=315963ca6d10875ebac91b5126ddf0f2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"lead",
+								"send-message"
+							],
+							"query": [
+								{
+									"key": "userId",
+									"value": "K8KeGDuOtWMV0DM5BewbB2QmWcL2"
+								},
+								{
+									"key": "leadId",
+									"value": "315963ca6d10875ebac91b5126ddf0f2"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer amwiz@eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsb2NhbElkIjoiSzhLZUdEdU90V01WMERNNUJld2JCMlFtV2NMMiIsImVtYWlsIjoiYXJ1bGt1bWFyQGFtd2hpei5jb20iLCJkaXNwbGF5TmFtZSI6IkFydWxrdW1hciBUaGl5YWdhcmFqYW4iLCJwaG90b1VybCI6Imh0dHBzOi8vbGgzLmdvb2dsZXVzZXJjb250ZW50LmNvbS9hL0FDZzhvY0t3eU1uZjUySzJsWWlmM3JCVkNhM0kzdzVleXFMRU1MbEQ3LS1WUmtXRT1zOTYtYyIsImVtYWlsVmVyaWZpZWQiOnRydWUsInByb3ZpZGVyVXNlckluZm8iOlt7InByb3ZpZGVySWQiOiJnb29nbGUuY29tIiwiZGlzcGxheU5hbWUiOiJBcnVsa3VtYXIgVGhpeWFnYXJhamFuIiwicGhvdG9VcmwiOiJodHRwczovL2xoMy5nb29nbGV1c2VyY29udGVudC5jb20vYS9BQ2c4b2NLd3lNbmY1MksybFlpZjNyQlZDYTNJM3c1ZXlxTEVNTGxENy0tVlJrV0U9czk2LWMiLCJmZWRlcmF0ZWRJZCI6Iks4S2VHRHVPdFdNVjBETTVCZXdiQjJRbVdjTDIiLCJlbWFpbCI6ImFydWxrdW1hckBhbXdoaXouY29tIiwicmF3SWQiOiJLOEtlR0R1T3RXTVYwRE01QmV3YkIyUW1XY0wyIn1dLCJ2YWxpZFNpbmNlIjoiV2VkLCAxNCBGZWIgMjAyNCAxMjo0Njo1NCBHTVQiLCJsYXN0TG9naW5BdCI6IlNhdCwgMTggTWF5IDIwMjQgMDk6NTg6MDIgR01UIiwiY3JlYXRlZEF0IjoiV2VkLCAxNCBGZWIgMjAyNCAxMjo0Njo1NCBHTVQiLCJsYXN0UmVmcmVzaEF0IjoiU2F0LCAxOCBNYXkgMjAyNCAwOTo1ODowMiBHTVQiLCJpYXQiOjE3MTYwMjY0MzQsImV4cCI6MTcxNjYzMTIzNH0.CkiiAxLrLl5q4wCusNjSlTeZ7Ahyq_3eql5IZQ99Z7s"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"message\":\"Hi Mia this is testing\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/lead/send-message?userId=K8KeGDuOtWMV0DM5BewbB2QmWcL2&leadId=315963ca6d10875ebac91b5126ddf0f2",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"lead",
+										"send-message"
+									],
+									"query": [
+										{
+											"key": "userId",
+											"value": "K8KeGDuOtWMV0DM5BewbB2QmWcL2"
+										},
+										{
+											"key": "leadId",
+											"value": "315963ca6d10875ebac91b5126ddf0f2"
+										}
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "37"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"25-CrbZKA0LXE6w6Gai3Va5RcTzLnM\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 18 Jun 2024 14:31:00 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"status\": \"invalid user-id\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "company/url",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"hermetic_user_id\": \"im9m4ajM3QTnVAbz7kBIuTxiZmA2\",\r\n    \"url\": \"www.example.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/company/url",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"company",
+								"url"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"hermetic_user_id\": \"im9m4ajM3QTnVAbz7kBIuTxiZmA2\",\r\n    \"url\": \"www.example.com\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/company/url",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"company",
+										"url"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "40"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"28-PgQ7NcJXiv5IxTcmqUgqjO3dnm8\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 18 Jun 2024 14:44:43 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"status\": \"user not permitted\"\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "app-lead-data",
+			"item": [
+				{
+					"name": "New Request",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": [
+						{
+							"name": "success response",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/user/dashboard-lead-data?userId=p80cDSbOlsfPWpjY3nwIZAQE1Fu2",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"user",
+										"dashboard-lead-data"
+									],
+									"query": [
+										{
+											"key": "userId",
+											"value": "p80cDSbOlsfPWpjY3nwIZAQE1Fu2"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "123"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"7b-jtdezwTZEYsrmUDUZmGPw4ZAl8Q\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 28 Jun 2024 06:39:09 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": [\n        {\n            \"total_unique_clients\": [\n                {\n                    \"unique_leads\": \"13\",\n                    \"month\": \"March    \"\n                },\n                {\n                    \"unique_leads\": \"1\",\n                    \"month\": \"April    \"\n                }\n            ]\n        },\n        {}\n    ]\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "firebase-users",
+			"item": [
+				{
+					"name": "http://localhost:3000/user/enable?uid=vvRHaxylf4gXDFt5yTCVkuAQxKi2",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer amwiz@eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsb2NhbElkIjoidnZSSGF4eWxmNGdYREZ0NXlUQ1ZrdUFReEtpMiIsImVtYWlsIjoibmFnYXJhakBhbXdoaXouY29tIiwiZGlzcGxheU5hbWUiOiJOYWdhcmFqIFIiLCJwaG90b1VybCI6Imh0dHBzOi8vbGgzLmdvb2dsZXVzZXJjb250ZW50LmNvbS9hL0FDZzhvY0lITTllUmtscFZ4MUhVa3U1VlJlTUVrY3ZDZU9RNzBZVVR4WjVJZ2g2NHQ1bzR0VlE9czk2LWMiLCJlbWFpbFZlcmlmaWVkIjp0cnVlLCJwcm92aWRlclVzZXJJbmZvIjpbeyJwcm92aWRlcklkIjoiZ29vZ2xlLmNvbSIsImRpc3BsYXlOYW1lIjoiTmFnYXJhaiBSIiwicGhvdG9VcmwiOiJodHRwczovL2xoMy5nb29nbGV1c2VyY29udGVudC5jb20vYS9BQ2c4b2NJSE05ZVJrbHBWeDFIVWt1NVZSZU1Fa2N2Q2VPUTcwWVVUeFo1SWdoNjR0NW80dFZRPXM5Ni1jIiwiZmVkZXJhdGVkSWQiOiJ2dlJIYXh5bGY0Z1hERnQ1eVRDVmt1QVF4S2kyIiwiZW1haWwiOiJuYWdhcmFqQGFtd2hpei5jb20iLCJyYXdJZCI6InZ2UkhheHlsZjRnWERGdDV5VENWa3VBUXhLaTIifV0sInZhbGlkU2luY2UiOiJXZWQsIDI2IEp1biAyMDI0IDE0OjAzOjE3IEdNVCIsImxhc3RMb2dpbkF0IjoiVGh1LCAyNyBKdW4gMjAyNCAwNTozMDoyNCBHTVQiLCJjcmVhdGVkQXQiOiJXZWQsIDI2IEp1biAyMDI0IDE0OjAzOjE3IEdNVCIsImxhc3RSZWZyZXNoQXQiOiJUaHUsIDI3IEp1biAyMDI0IDA1OjMwOjI0IEdNVCIsImlhdCI6MTcxOTQ2NjIyNiwiZXhwIjoxNzIwMDcxMDI2fQ.YJmhejjPlQZMIhEYsz1WMFKg4Aa4mLvnn4wth3wXlNY",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://dev-capi.hermetic.ai/user/enable?uid=vvRHaxylf4gXDFt5yTCVkuAQxKi2",
+							"protocol": "https",
+							"host": [
+								"dev-capi",
+								"hermetic",
+								"ai"
+							],
+							"path": [
+								"user",
+								"enable"
+							],
+							"query": [
+								{
+									"key": "uid",
+									"value": "vvRHaxylf4gXDFt5yTCVkuAQxKi2"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "enable-user",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer amwiz@eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsb2NhbElkIjoidnZSSGF4eWxmNGdYREZ0NXlUQ1ZrdUFReEtpMiIsImVtYWlsIjoibmFnYXJhakBhbXdoaXouY29tIiwiZGlzcGxheU5hbWUiOiJOYWdhcmFqIFIiLCJwaG90b1VybCI6Imh0dHBzOi8vbGgzLmdvb2dsZXVzZXJjb250ZW50LmNvbS9hL0FDZzhvY0lITTllUmtscFZ4MUhVa3U1VlJlTUVrY3ZDZU9RNzBZVVR4WjVJZ2g2NHQ1bzR0VlE9czk2LWMiLCJlbWFpbFZlcmlmaWVkIjp0cnVlLCJwcm92aWRlclVzZXJJbmZvIjpbeyJwcm92aWRlcklkIjoiZ29vZ2xlLmNvbSIsImRpc3BsYXlOYW1lIjoiTmFnYXJhaiBSIiwicGhvdG9VcmwiOiJodHRwczovL2xoMy5nb29nbGV1c2VyY29udGVudC5jb20vYS9BQ2c4b2NJSE05ZVJrbHBWeDFIVWt1NVZSZU1Fa2N2Q2VPUTcwWVVUeFo1SWdoNjR0NW80dFZRPXM5Ni1jIiwiZmVkZXJhdGVkSWQiOiJ2dlJIYXh5bGY0Z1hERnQ1eVRDVmt1QVF4S2kyIiwiZW1haWwiOiJuYWdhcmFqQGFtd2hpei5jb20iLCJyYXdJZCI6InZ2UkhheHlsZjRnWERGdDV5VENWa3VBUXhLaTIifV0sInZhbGlkU2luY2UiOiJXZWQsIDI2IEp1biAyMDI0IDE0OjAzOjE3IEdNVCIsImxhc3RMb2dpbkF0IjoiVGh1LCAyNyBKdW4gMjAyNCAwNTozMDoyNCBHTVQiLCJjcmVhdGVkQXQiOiJXZWQsIDI2IEp1biAyMDI0IDE0OjAzOjE3IEdNVCIsImxhc3RSZWZyZXNoQXQiOiJUaHUsIDI3IEp1biAyMDI0IDA1OjMwOjI0IEdNVCIsImlhdCI6MTcxOTQ2NjIyNiwiZXhwIjoxNzIwMDcxMDI2fQ.YJmhejjPlQZMIhEYsz1WMFKg4Aa4mLvnn4wth3wXlNY",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://dev-capi.hermetic.ai/user/enable?uid=vvRHaxylf4gXDFt5yTCVkuAQxKi2",
+									"protocol": "https",
+									"host": [
+										"dev-capi",
+										"hermetic",
+										"ai"
+									],
+									"path": [
+										"user",
+										"enable"
+									],
+									"query": [
+										{
+											"key": "uid",
+											"value": "vvRHaxylf4gXDFt5yTCVkuAQxKi2"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.24.0 (Ubuntu)"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 01 Jul 2024 10:01:28 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "706"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2c2-BOt+vEG5fjHL/PaBQsXK3JED/pc\""
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"uid\": \"vvRHaxylf4gXDFt5yTCVkuAQxKi2\",\n        \"email\": \"nagaraj@amwhiz.com\",\n        \"emailVerified\": true,\n        \"displayName\": \"Nagaraj R\",\n        \"photoURL\": \"https://lh3.googleusercontent.com/a/ACg8ocIHM9eRklpVx1HUku5VReMEkcvCeOQ70YUTxZ5Igh64t5o4tVQ=s96-c\",\n        \"disabled\": false,\n        \"metadata\": {\n            \"lastSignInTime\": \"Thu, 27 Jun 2024 05:30:24 GMT\",\n            \"creationTime\": \"Wed, 26 Jun 2024 14:03:17 GMT\",\n            \"lastRefreshTime\": \"Fri, 28 Jun 2024 16:02:41 GMT\"\n        },\n        \"tokensValidAfterTime\": \"Wed, 26 Jun 2024 14:03:17 GMT\",\n        \"providerData\": [\n            {\n                \"uid\": \"106215743811922798345\",\n                \"displayName\": \"Nagaraj R\",\n                \"email\": \"nagaraj@amwhiz.com\",\n                \"photoURL\": \"https://lh3.googleusercontent.com/a/ACg8ocIHM9eRklpVx1HUku5VReMEkcvCeOQ70YUTxZ5Igh64t5o4tVQ=s96-c\",\n                \"providerId\": \"google.com\"\n            }\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "disable-user",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer amwiz@eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsb2NhbElkIjoidnZSSGF4eWxmNGdYREZ0NXlUQ1ZrdUFReEtpMiIsImVtYWlsIjoibmFnYXJhakBhbXdoaXouY29tIiwiZGlzcGxheU5hbWUiOiJOYWdhcmFqIFIiLCJwaG90b1VybCI6Imh0dHBzOi8vbGgzLmdvb2dsZXVzZXJjb250ZW50LmNvbS9hL0FDZzhvY0lITTllUmtscFZ4MUhVa3U1VlJlTUVrY3ZDZU9RNzBZVVR4WjVJZ2g2NHQ1bzR0VlE9czk2LWMiLCJlbWFpbFZlcmlmaWVkIjp0cnVlLCJwcm92aWRlclVzZXJJbmZvIjpbeyJwcm92aWRlcklkIjoiZ29vZ2xlLmNvbSIsImRpc3BsYXlOYW1lIjoiTmFnYXJhaiBSIiwicGhvdG9VcmwiOiJodHRwczovL2xoMy5nb29nbGV1c2VyY29udGVudC5jb20vYS9BQ2c4b2NJSE05ZVJrbHBWeDFIVWt1NVZSZU1Fa2N2Q2VPUTcwWVVUeFo1SWdoNjR0NW80dFZRPXM5Ni1jIiwiZmVkZXJhdGVkSWQiOiJ2dlJIYXh5bGY0Z1hERnQ1eVRDVmt1QVF4S2kyIiwiZW1haWwiOiJuYWdhcmFqQGFtd2hpei5jb20iLCJyYXdJZCI6InZ2UkhheHlsZjRnWERGdDV5VENWa3VBUXhLaTIifV0sInZhbGlkU2luY2UiOiJXZWQsIDI2IEp1biAyMDI0IDE0OjAzOjE3IEdNVCIsImxhc3RMb2dpbkF0IjoiVGh1LCAyNyBKdW4gMjAyNCAwNTozMDoyNCBHTVQiLCJjcmVhdGVkQXQiOiJXZWQsIDI2IEp1biAyMDI0IDE0OjAzOjE3IEdNVCIsImxhc3RSZWZyZXNoQXQiOiJUaHUsIDI3IEp1biAyMDI0IDA1OjMwOjI0IEdNVCIsImlhdCI6MTcxOTQ2NjIyNiwiZXhwIjoxNzIwMDcxMDI2fQ.YJmhejjPlQZMIhEYsz1WMFKg4Aa4mLvnn4wth3wXlNY"
+							}
+						],
+						"url": {
+							"raw": "https://dev-capi.hermetic.ai/user/disable?uid=vvRHaxylf4gXDFt5yTCVkuAQxKi2",
+							"protocol": "https",
+							"host": [
+								"dev-capi",
+								"hermetic",
+								"ai"
+							],
+							"path": [
+								"user",
+								"disable"
+							],
+							"query": [
+								{
+									"key": "uid",
+									"value": "vvRHaxylf4gXDFt5yTCVkuAQxKi2"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "disable-user",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer amwiz@eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsb2NhbElkIjoidnZSSGF4eWxmNGdYREZ0NXlUQ1ZrdUFReEtpMiIsImVtYWlsIjoibmFnYXJhakBhbXdoaXouY29tIiwiZGlzcGxheU5hbWUiOiJOYWdhcmFqIFIiLCJwaG90b1VybCI6Imh0dHBzOi8vbGgzLmdvb2dsZXVzZXJjb250ZW50LmNvbS9hL0FDZzhvY0lITTllUmtscFZ4MUhVa3U1VlJlTUVrY3ZDZU9RNzBZVVR4WjVJZ2g2NHQ1bzR0VlE9czk2LWMiLCJlbWFpbFZlcmlmaWVkIjp0cnVlLCJwcm92aWRlclVzZXJJbmZvIjpbeyJwcm92aWRlcklkIjoiZ29vZ2xlLmNvbSIsImRpc3BsYXlOYW1lIjoiTmFnYXJhaiBSIiwicGhvdG9VcmwiOiJodHRwczovL2xoMy5nb29nbGV1c2VyY29udGVudC5jb20vYS9BQ2c4b2NJSE05ZVJrbHBWeDFIVWt1NVZSZU1Fa2N2Q2VPUTcwWVVUeFo1SWdoNjR0NW80dFZRPXM5Ni1jIiwiZmVkZXJhdGVkSWQiOiJ2dlJIYXh5bGY0Z1hERnQ1eVRDVmt1QVF4S2kyIiwiZW1haWwiOiJuYWdhcmFqQGFtd2hpei5jb20iLCJyYXdJZCI6InZ2UkhheHlsZjRnWERGdDV5VENWa3VBUXhLaTIifV0sInZhbGlkU2luY2UiOiJXZWQsIDI2IEp1biAyMDI0IDE0OjAzOjE3IEdNVCIsImxhc3RMb2dpbkF0IjoiVGh1LCAyNyBKdW4gMjAyNCAwNTozMDoyNCBHTVQiLCJjcmVhdGVkQXQiOiJXZWQsIDI2IEp1biAyMDI0IDE0OjAzOjE3IEdNVCIsImxhc3RSZWZyZXNoQXQiOiJUaHUsIDI3IEp1biAyMDI0IDA1OjMwOjI0IEdNVCIsImlhdCI6MTcxOTQ2NjIyNiwiZXhwIjoxNzIwMDcxMDI2fQ.YJmhejjPlQZMIhEYsz1WMFKg4Aa4mLvnn4wth3wXlNY"
+									}
+								],
+								"url": {
+									"raw": "https://dev-capi.hermetic.ai/user/disable?uid=vvRHaxylf4gXDFt5yTCVkuAQxKi2",
+									"protocol": "https",
+									"host": [
+										"dev-capi",
+										"hermetic",
+										"ai"
+									],
+									"path": [
+										"user",
+										"disable"
+									],
+									"query": [
+										{
+											"key": "uid",
+											"value": "vvRHaxylf4gXDFt5yTCVkuAQxKi2"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.24.0 (Ubuntu)"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 01 Jul 2024 10:02:20 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "705"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2c1-+WLZ87TDIFKKxDN5OR0ClJObx5I\""
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"uid\": \"vvRHaxylf4gXDFt5yTCVkuAQxKi2\",\n        \"email\": \"nagaraj@amwhiz.com\",\n        \"emailVerified\": true,\n        \"displayName\": \"Nagaraj R\",\n        \"photoURL\": \"https://lh3.googleusercontent.com/a/ACg8ocIHM9eRklpVx1HUku5VReMEkcvCeOQ70YUTxZ5Igh64t5o4tVQ=s96-c\",\n        \"disabled\": true,\n        \"metadata\": {\n            \"lastSignInTime\": \"Thu, 27 Jun 2024 05:30:24 GMT\",\n            \"creationTime\": \"Wed, 26 Jun 2024 14:03:17 GMT\",\n            \"lastRefreshTime\": \"Fri, 28 Jun 2024 16:02:41 GMT\"\n        },\n        \"tokensValidAfterTime\": \"Wed, 26 Jun 2024 14:03:17 GMT\",\n        \"providerData\": [\n            {\n                \"uid\": \"106215743811922798345\",\n                \"displayName\": \"Nagaraj R\",\n                \"email\": \"nagaraj@amwhiz.com\",\n                \"photoURL\": \"https://lh3.googleusercontent.com/a/ACg8ocIHM9eRklpVx1HUku5VReMEkcvCeOQ70YUTxZ5Igh64t5o4tVQ=s96-c\",\n                \"providerId\": \"google.com\"\n            }\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "delete-user",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer amwiz@eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsb2NhbElkIjoidnZSSGF4eWxmNGdYREZ0NXlUQ1ZrdUFReEtpMiIsImVtYWlsIjoibmFnYXJhakBhbXdoaXouY29tIiwiZGlzcGxheU5hbWUiOiJOYWdhcmFqIFIiLCJwaG90b1VybCI6Imh0dHBzOi8vbGgzLmdvb2dsZXVzZXJjb250ZW50LmNvbS9hL0FDZzhvY0lITTllUmtscFZ4MUhVa3U1VlJlTUVrY3ZDZU9RNzBZVVR4WjVJZ2g2NHQ1bzR0VlE9czk2LWMiLCJlbWFpbFZlcmlmaWVkIjp0cnVlLCJwcm92aWRlclVzZXJJbmZvIjpbeyJwcm92aWRlcklkIjoiZ29vZ2xlLmNvbSIsImRpc3BsYXlOYW1lIjoiTmFnYXJhaiBSIiwicGhvdG9VcmwiOiJodHRwczovL2xoMy5nb29nbGV1c2VyY29udGVudC5jb20vYS9BQ2c4b2NJSE05ZVJrbHBWeDFIVWt1NVZSZU1Fa2N2Q2VPUTcwWVVUeFo1SWdoNjR0NW80dFZRPXM5Ni1jIiwiZmVkZXJhdGVkSWQiOiJ2dlJIYXh5bGY0Z1hERnQ1eVRDVmt1QVF4S2kyIiwiZW1haWwiOiJuYWdhcmFqQGFtd2hpei5jb20iLCJyYXdJZCI6InZ2UkhheHlsZjRnWERGdDV5VENWa3VBUXhLaTIifV0sInZhbGlkU2luY2UiOiJXZWQsIDI2IEp1biAyMDI0IDE0OjAzOjE3IEdNVCIsImxhc3RMb2dpbkF0IjoiVGh1LCAyNyBKdW4gMjAyNCAwNTozMDoyNCBHTVQiLCJjcmVhdGVkQXQiOiJXZWQsIDI2IEp1biAyMDI0IDE0OjAzOjE3IEdNVCIsImxhc3RSZWZyZXNoQXQiOiJUaHUsIDI3IEp1biAyMDI0IDA1OjMwOjI0IEdNVCIsImlhdCI6MTcxOTQ2NjIyNiwiZXhwIjoxNzIwMDcxMDI2fQ.YJmhejjPlQZMIhEYsz1WMFKg4Aa4mLvnn4wth3wXlNY"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/user/delete?uid=pLE3AZOqnQWLcS74HDvvcVwO6A43",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"delete"
+							],
+							"query": [
+								{
+									"key": "uid",
+									"value": "pLE3AZOqnQWLcS74HDvvcVwO6A43"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "delete-user",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer amwiz@eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsb2NhbElkIjoidnZSSGF4eWxmNGdYREZ0NXlUQ1ZrdUFReEtpMiIsImVtYWlsIjoibmFnYXJhakBhbXdoaXouY29tIiwiZGlzcGxheU5hbWUiOiJOYWdhcmFqIFIiLCJwaG90b1VybCI6Imh0dHBzOi8vbGgzLmdvb2dsZXVzZXJjb250ZW50LmNvbS9hL0FDZzhvY0lITTllUmtscFZ4MUhVa3U1VlJlTUVrY3ZDZU9RNzBZVVR4WjVJZ2g2NHQ1bzR0VlE9czk2LWMiLCJlbWFpbFZlcmlmaWVkIjp0cnVlLCJwcm92aWRlclVzZXJJbmZvIjpbeyJwcm92aWRlcklkIjoiZ29vZ2xlLmNvbSIsImRpc3BsYXlOYW1lIjoiTmFnYXJhaiBSIiwicGhvdG9VcmwiOiJodHRwczovL2xoMy5nb29nbGV1c2VyY29udGVudC5jb20vYS9BQ2c4b2NJSE05ZVJrbHBWeDFIVWt1NVZSZU1Fa2N2Q2VPUTcwWVVUeFo1SWdoNjR0NW80dFZRPXM5Ni1jIiwiZmVkZXJhdGVkSWQiOiJ2dlJIYXh5bGY0Z1hERnQ1eVRDVmt1QVF4S2kyIiwiZW1haWwiOiJuYWdhcmFqQGFtd2hpei5jb20iLCJyYXdJZCI6InZ2UkhheHlsZjRnWERGdDV5VENWa3VBUXhLaTIifV0sInZhbGlkU2luY2UiOiJXZWQsIDI2IEp1biAyMDI0IDE0OjAzOjE3IEdNVCIsImxhc3RMb2dpbkF0IjoiVGh1LCAyNyBKdW4gMjAyNCAwNTozMDoyNCBHTVQiLCJjcmVhdGVkQXQiOiJXZWQsIDI2IEp1biAyMDI0IDE0OjAzOjE3IEdNVCIsImxhc3RSZWZyZXNoQXQiOiJUaHUsIDI3IEp1biAyMDI0IDA1OjMwOjI0IEdNVCIsImlhdCI6MTcxOTQ2NjIyNiwiZXhwIjoxNzIwMDcxMDI2fQ.YJmhejjPlQZMIhEYsz1WMFKg4Aa4mLvnn4wth3wXlNY"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:3000/user/delete?uid=pLE3AZOqnQWLcS74HDvvcVwO6A43",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"user",
+										"delete"
+									],
+									"query": [
+										{
+											"key": "uid",
+											"value": "pLE3AZOqnQWLcS74HDvvcVwO6A43"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "38"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"26-OyRJUOx9CcxcdEUPc1pcl3hQeB8\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 01 Jul 2024 10:10:03 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": \"user successfully deleted!!\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Hs-Disconnect",
+			"item": [
+				{
+					"name": "New Request",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
